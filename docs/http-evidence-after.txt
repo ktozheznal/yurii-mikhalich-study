@@ -1,0 +1,68 @@
+﻿SecureLab ЛР1 — HTTP evidence AFTER implementing severity-summary
+Captured: 2026-09-09 21:26:57 +03:00
+Branch: lab/1-system
+==============================================================================
+
+### T-01 health
+GET http://localhost:5080/health
+Accept: application/json
+--- expected: 200
+--- actual:   HTTP 200
+Content-Type: application/json; charset=utf-8
+{"status":"ready"}
+
+### T-02 list ?status=Triaged
+GET http://localhost:5080/api/incidents?status=Triaged
+Accept: application/json
+--- expected: 200
+--- actual:   HTTP 200
+Content-Type: application/json; charset=utf-8
+[{"id":"20000000-0000-0000-0000-000000000001","title":"Підозрілий лист із вкладенням","severity":"Medium","status":"Triaged","occurredAtUtc":"2026-08-01T08:30:00+00:00","createdAtUtc":"2026-08-01T09:00:00+00:00"}]
+
+### T-03 list ?status=Resolved
+GET http://localhost:5080/api/incidents?status=Resolved
+Accept: application/json
+--- expected: 200 []
+--- actual:   HTTP 200
+Content-Type: application/json; charset=utf-8
+[]
+
+### T-04 details missing GUID
+GET http://localhost:5080/api/incidents/99999999-9999-9999-9999-999999999999
+Accept: application/json
+--- expected: 404
+--- actual:   HTTP 404
+Content-Type: application/problem+json
+{"type":"https://tools.ietf.org/html/rfc9110#section-15.5.5","title":"Інцидент не знайдено","status":404,"detail":"Інцидент '99999999-9999-9999-9999-999999999999' не існує.","traceId":"00-9819f0a29e39b7907460d26d8d993b71-6357a6498f8b3782-00"}
+
+### T-05 list ?status=Unknown
+GET http://localhost:5080/api/incidents?status=Unknown
+Accept: application/json
+--- expected: 400
+--- actual:   HTTP 400
+Content-Type: application/problem+json
+{"type":"https://tools.ietf.org/html/rfc9110#section-15.5.1","title":"One or more validation errors occurred.","status":400,"errors":{"status":["Допустимі значення: New, Triaged, InProgress, Resolved, Closed."]},"traceId":"00-813dc994d8b07c9f4e9a85bce925beb6-2f199f3336e0d968-00"}
+
+### T-06 severity-summary
+GET http://localhost:5080/api/incidents/severity-summary
+Accept: application/json
+--- expected: 200, 4 levels, Critical:0
+--- actual:   HTTP 200
+Content-Type: application/json; charset=utf-8
+[{"severity":"Low","count":1},{"severity":"Medium","count":1},{"severity":"High","count":1},{"severity":"Critical","count":0}]
+
+### T-06b summary ?Triaged
+GET http://localhost:5080/api/incidents/severity-summary?status=Triaged
+Accept: application/json
+--- expected: 200, Medium:1 rest 0
+--- actual:   HTTP 200
+Content-Type: application/json; charset=utf-8
+[{"severity":"Low","count":0},{"severity":"Medium","count":1},{"severity":"High","count":0},{"severity":"Critical","count":0}]
+
+### T-06c summary ?Unknown
+GET http://localhost:5080/api/incidents/severity-summary?status=Unknown
+Accept: application/json
+--- expected: 400
+--- actual:   HTTP 400
+Content-Type: application/problem+json
+{"type":"https://tools.ietf.org/html/rfc9110#section-15.5.1","title":"One or more validation errors occurred.","status":400,"errors":{"status":["Допустимі значення: New, Triaged, InProgress, Resolved, Closed."]},"traceId":"00-4daa65115ae87db0eb9edd87165bf550-fb0d9f0e528e58d0-00"}
