@@ -13,6 +13,11 @@ Accept: application/json
 GET {{host}}/api/incidents?status=Triaged
 Accept: application/json
 
+### Empty but correct result: expected 200 with []
+### No incident has status Resolved in the baseline seed.
+GET {{host}}/api/incidents?status=Resolved
+Accept: application/json
+
 ### Existing details
 GET {{host}}/api/incidents/{{aliceIncidentId}}
 Accept: application/json
@@ -25,6 +30,20 @@ Accept: application/json
 GET {{host}}/api/incidents?status=Unknown
 Accept: application/json
 
-### Lab 1 extension point: expected 501 before student implementation
+### Lab 1 extension point: implemented in ЛР 1.
+### Expected 200 with all four severity levels in criticality order
+### (Low, Medium, High, Critical). On the baseline seed:
+### Low: 1, Medium: 1, High: 1, Critical: 0.
 GET {{host}}/api/incidents/severity-summary
+Accept: application/json
+
+### Summary with optional status filter: expected 200.
+### On the baseline seed only Triaged incident is Medium,
+### so expected Low: 0, Medium: 1, High: 0, Critical: 0.
+GET {{host}}/api/incidents/severity-summary?status=Triaged
+Accept: application/json
+
+### Summary with a status that is not on the allowlist:
+### expected 400 Validation Problem Details
+GET {{host}}/api/incidents/severity-summary?status=Unknown
 Accept: application/json

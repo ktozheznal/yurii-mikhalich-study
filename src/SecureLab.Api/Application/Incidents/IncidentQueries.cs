@@ -31,6 +31,45 @@ public sealed class IncidentQueries(SecureLabDbContext dbContext, ILogger<Incide
             .ToListAsync(cancellationToken);
     }
 
+    /// <summary>
+    /// Рахує інциденти за рівнем критичності.
+    /// Політика нульових груп: повний перелік рівнів enum; рівень без інцидентів має count = 0.
+    /// Порядок: за критичністю (Low, Medium, High, Critical), а не лексикографічний,
+    /// тому сортування виконується в пам'яті після матеріалізації агрегату.
+    /// </summary>
+    public async Task<IReadOnlyList<IncidentSeveritySummaryResponse>> GetSeveritySummaryAsync(
+        IncidentStatus? status,
+        CancellationToken cancellationToken)
+    {
+        var query = dbContext.Incidents.AsNoTracking();
+        if (status is not null)
+        {
+            query = query.Where(incident => incident.Status == status);
+        }
+
+        var groups = await query
+            .GroupBy(incident => incident.Severity)
+            .Select(group => new { Severity = group.Key, Count = group.Count() })
+            .ToListAsync(cancellationToken);
+
+        var counts = groups.ToDictionary(group => group.Severity, group => group.Count);
+
+        var summary = Enum.GetValues<IncidentSeverity>()
+            .OrderBy(severity => severity)
+            .Select(severity => new IncidentSeveritySummaryResponse(
+                severity.ToString(),
+                counts.TryGetValue(severity, out var count) ? count : 0))
+            .ToList();
+
+        logger.LogInformation(
+            "Built severity summary for status filter {Status}: {LevelCount} levels, {NonEmptyCount} with incidents",
+            status,
+            summary.Count,
+            groups.Count);
+
+        return summary;
+    }
+
     public Task<IncidentDetailsResponse?> GetDetailsAsync(Guid id, CancellationToken cancellationToken)
     {
         logger.LogInformation("Loading incident {IncidentId}", id);
