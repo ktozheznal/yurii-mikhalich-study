@@ -1,30 +1,152 @@
 @api = http://localhost:5080
 
-# Vulnerable-stage checks: only the local Development API with artificial seed.
-# Save actual responses for CP-02/S-01 before restoring the fixed search.
+# Лише локальний Development-стенд зі штучними даними. Перед повторним ручним
+# прогоном POST-сценаріїв відновіть seed: успішні POST створюють записи.
 
-### A — ordinary search: one USB seed record
-GET {{api}}/api/incidents/search?q=USB
+### T-01: valid DTO; server chooses id, owner, status and audit time (201)
+POST {{api}}/api/incidents
+Content-Type: application/json
 
-### B — absent term: []
-GET {{api}}/api/incidents/search?q=zz-no-match
+{
+  "title": "  LR02-valid-create  ",
+  "description": "Штучний запис для ручної перевірки контракту.",
+  "severity": "Low",
+  "occurredAtUtc": "2026-09-01T13:00:00+03:00",
+  "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+  "ownerUserId": "10000000-0000-0000-0000-000000000002",
+  "status": "Closed"
+}
 
-### C — the single permitted read-only control input: expanded result before the fix
-GET {{api}}/api/incidents/search?q=zz-no-match%27%20OR%20TRUE%20--%20
-
-### D — legitimate apostrophe: safe 500 Problem Details before the fix
-GET {{api}}/api/incidents/search?q=O%27Brien
-
-### T-02 — invalid numeric severity: 400 Problem Details
+### T-02: invalid enum, including a numeric string (400, errors.severity)
 POST {{api}}/api/incidents
 Content-Type: application/json
 
 {
   "title": "LR02-invalid-severity",
-  "description": "Штучний запис для перевірки DTO.",
+  "description": "Штучний запис для негативної перевірки.",
   "severity": "7",
   "occurredAtUtc": "2026-09-01T10:00:00Z"
 }
 
-### T-06 — missing incident: 404 Problem Details
+### T-02: blank title (400, errors.title)
+POST {{api}}/api/incidents
+Content-Type: application/json
+
+{
+  "title": "   ",
+  "description": "Штучний запис для негативної перевірки.",
+  "severity": "Low",
+  "occurredAtUtc": "2026-09-01T10:00:00Z"
+}
+
+### T-02: missing occurredAtUtc (400, errors.occurredAtUtc)
+POST {{api}}/api/incidents
+Content-Type: application/json
+
+{
+  "title": "LR02-missing-date",
+  "description": "Штучний запис для негативної перевірки.",
+  "severity": "Low"
+}
+
+### T-02: too far in the future (400, errors.occurredAtUtc)
+POST {{api}}/api/incidents
+Content-Type: application/json
+
+{
+  "title": "LR02-future-date",
+  "description": "Штучний запис для негативної перевірки.",
+  "severity": "Low",
+  "occurredAtUtc": "2099-01-01T00:00:00Z"
+}
+
+### T-02: title length is measured before Trim (161 sent, 160 after Trim)
+POST {{api}}/api/incidents
+Content-Type: application/json
+
+{
+  "title": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ",
+  "description": "Штучний запис для перевірки довжини.",
+  "severity": "Low",
+  "occurredAtUtc": "2026-09-01T10:00:00Z"
+}
+
+### T-02: description length is measured before Trim (4001 sent, 4000 after Trim)
+POST {{api}}/api/incidents
+Content-Type: application/json
+
+{
+  "title": "LR02-long-description",
+  "description": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ",
+  "severity": "Low",
+  "occurredAtUtc": "2026-09-01T10:00:00Z"
+}
+
+### T-03: first active title (201). Run before the next request on a reset seed.
+POST {{api}}/api/incidents
+Content-Type: application/json
+
+{
+  "title": "LR02-duplicate-active",
+  "description": "Штучний запис для перевірки конфлікту.",
+  "severity": "Low",
+  "occurredAtUtc": "2026-09-01T10:00:00Z"
+}
+
+### T-03: same normalized, case-sensitive active title (409 Problem Details)
+POST {{api}}/api/incidents
+Content-Type: application/json
+
+{
+  "title": "  LR02-duplicate-active  ",
+  "description": "Другий штучний запис із тим самим заголовком.",
+  "severity": "Low",
+  "occurredAtUtc": "2026-09-01T10:00:00Z"
+}
+
+### T-09: High with 39 characters after Trim (400, errors.description)
+POST {{api}}/api/incidents
+Content-Type: application/json
+
+{
+  "title": "LR02-high-39",
+  "description": "  012345678901234567890123456789012345678  ",
+  "severity": "High",
+  "occurredAtUtc": "2026-09-01T10:00:00Z"
+}
+
+### T-09: High with 40 characters after Trim (201)
+POST {{api}}/api/incidents
+Content-Type: application/json
+
+{
+  "title": "LR02-high-40",
+  "description": "  0123456789012345678901234567890123456789  ",
+  "severity": "High",
+  "occurredAtUtc": "2026-09-01T10:00:00Z"
+}
+
+### T-06: unknown incident (404 Problem Details)
 GET {{api}}/api/incidents/99999999-9999-9999-9999-999999999999
+
+### T-04: ordinary search (200; seed incident 0005)
+GET {{api}}/api/incidents/search?q=USB
+
+### T-04: legitimate apostrophe (200; seed incident 0004)
+GET {{api}}/api/incidents/search?q=O%27Brien
+
+### S-02: the fixed read-only control input must return 200 and []
+GET {{api}}/api/incidents/search?q=zz-no-match%27%20OR%20TRUE%20--%20
+
+### Literal percent, underscore and backslash (none occur in the reset seed)
+GET {{api}}/api/incidents/search?q=%25
+GET {{api}}/api/incidents/search?q=%5F
+GET {{api}}/api/incidents/search?q=%5C
+
+### Default order, severity rank and status rank (200, at most 50 items)
+GET {{api}}/api/incidents/search
+GET {{api}}/api/incidents/search?sortBy=severity
+GET {{api}}/api/incidents/search?sortBy=status
+
+### T-05: unknown sort key (400, errors.sortBy)
+GET {{api}}/api/incidents/search?sortBy=price

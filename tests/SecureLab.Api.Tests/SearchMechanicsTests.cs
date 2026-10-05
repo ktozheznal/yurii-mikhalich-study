@@ -12,4 +12,16 @@ public sealed class SearchMechanicsTests(SecureLabApiFactory factory) : IClassFi
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         Assert.Equal("application/json", response.Content.Headers.ContentType?.MediaType);
     }
+
+    [Fact]
+    public async Task Search_AllowsApostropheInTerm_AndRejectsUnsafeSort()
+    {
+        using var client = factory.CreateClient();
+
+        using var validResponse = await client.GetAsync("/api/incidents/search?q=O%27Brien&sortBy=createdAtUtc");
+        Assert.Equal(HttpStatusCode.OK, validResponse.StatusCode);
+
+        using var invalidResponse = await client.GetAsync("/api/incidents/search?q=test&sortBy=price");
+        Assert.Equal(HttpStatusCode.BadRequest, invalidResponse.StatusCode);
+    }
 }

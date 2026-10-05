@@ -11,19 +11,54 @@ public static class Lab02Endpoints
     {
         app.MapGet("/api/incidents/search", async (string? q, string? sortBy, SecureLabDbContext db, CancellationToken ct) =>
         {
-            var order = sortBy switch
+            var normalizedSort = NormalizeSort(sortBy);
+            if (normalizedSort is null)
             {
-                null or "" or "createdAtUtc" => "created_at_utc DESC",
-                "severity" => "severity", "status" => "status", _ => sortBy
+                return Results.ValidationProblem(new Dictionary<string, string[]>
+                {
+                    ["sortBy"] = ["Допустимі значення: createdAtUtc, severity, status."]
+                });
+            }
+
+            var query = db.Incidents.AsNoTracking();
+            var searchTerm = q?.Trim();
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                var pattern = $"%{EscapeLikePattern(searchTerm)}%";
+                query = query.Where(item =>
+                    EF.Functions.ILike(item.Title, pattern, "\\") ||
+                    EF.Functions.ILike(item.Description, pattern, "\\"));
+            }
+
+            query = normalizedSort switch
+            {
+                "severity" => query
+                    .OrderBy(item => item.Severity == IncidentSeverity.Critical ? 0
+                        : item.Severity == IncidentSeverity.High ? 1
+                        : item.Severity == IncidentSeverity.Medium ? 2 : 3)
+                    .ThenBy(item => item.Id),
+                "status" => query
+                    .OrderBy(item => item.Status == IncidentStatus.New ? 0
+                        : item.Status == IncidentStatus.Triaged ? 1
+                        : item.Status == IncidentStatus.InProgress ? 2
+                        : item.Status == IncidentStatus.Resolved ? 3 : 4)
+                    .ThenBy(item => item.Id),
+                _ => query.OrderByDescending(item => item.CreatedAtUtc)
+                    .ThenBy(item => item.Id)
             };
-            var sql = "SELECT * FROM incidents WHERE title ILIKE '%" + (q ?? "")
-                + "%' OR description ILIKE '%" + (q ?? "") + "%' ORDER BY " + order + " LIMIT 50";
-            var rows = await db.Incidents.FromSqlRaw(sql).AsNoTracking().ToListAsync(ct);
-            return Results.Ok(rows.Select(row => new
-            {
-                row.Id, row.Title, row.Description,
-                Severity = row.Severity.ToString(), Status = row.Status.ToString(), row.CreatedAtUtc
-            }));
+
+            var rows = await query
+                .Take(50)
+                .Select(row => new SearchIncidentResponse(
+                    row.Id,
+                    row.Title,
+                    row.Description,
+                    row.Severity.ToString(),
+                    row.Status.ToString(),
+                    row.CreatedAtUtc))
+                .ToListAsync(ct);
+
+            return Results.Ok(rows);
         });
 
         app.MapPost("/api/incidents", async (CreateIncidentRequest request, SecureLabDbContext db, CancellationToken ct) =>
@@ -115,6 +150,26 @@ public static class Lab02Endpoints
         });
     }
 
+    private static string EscapeLikePattern(string value) => value
+        .Replace("\\", "\\\\", StringComparison.Ordinal)
+        .Replace("%", "\\%", StringComparison.Ordinal)
+        .Replace("_", "\\_", StringComparison.Ordinal);
+
+    private static string? NormalizeSort(string? sortBy)
+    {
+        if (string.IsNullOrWhiteSpace(sortBy))
+        {
+            return "createdAtUtc";
+        }
+
+        return sortBy.Trim() switch
+        {
+            "createdAtUtc" => "createdAtUtc",
+            "severity" => "severity",
+            "status" => "status",
+            _ => null
+        };
+    }
 }
 
 public sealed record CreateIncidentRequest(
@@ -124,3 +179,6 @@ public sealed record CreatedIncidentResponse(
     Guid Id, string Title, string Severity, string Status,
     DateTimeOffset OccurredAtUtc, DateTimeOffset CreatedAtUtc);
 
+public sealed record SearchIncidentResponse(
+    Guid Id, string Title, string Description, string Severity, string Status,
+    DateTimeOffset CreatedAtUtc);

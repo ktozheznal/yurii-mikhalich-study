@@ -16,7 +16,7 @@ Starter навмисно не містить завершених рішень �
 
 ## 1. Передумови
 
-- .NET SDK `10.0.302` (зафіксовано у `global.json`);
+- стабільний .NET 10 SDK (у `global.json`: `10.0.100` з `latestFeature` та `allowPrerelease: false`);
 - Docker із підтримкою `docker compose`;
 - Git;
 - вільні локальні порти `5080` і `54329`.
@@ -137,7 +137,7 @@ docs/                    карта архітектури, варіант, ма
 | Ознака | Перевірка |
 |---|---|
 | `connection refused` до PostgreSQL | `docker compose ... ps`, порт `54329`, стан healthcheck |
-| SDK не знайдено | `dotnet --version` має повернути `10.0.302` у цій директорії |
+| SDK не знайдено | `dotnet --version` має повернути сумісний стабільний `10.0.x` у цій директорії |
 | порт API зайнятий | зупиніть інший процес на `5080` або задайте `ASPNETCORE_URLS` |
 | migration не застосовується | перевірте `ASPNETCORE_ENVIRONMENT=Development` і connection string |
 | змінили credentials у compose | узгоджено перевизначте `ConnectionStrings__SecureLab`; не записуйте реальне значення до Git |
