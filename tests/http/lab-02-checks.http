@@ -1,0 +1,30 @@
+@api = http://localhost:5080
+
+# Vulnerable-stage checks: only the local Development API with artificial seed.
+# Save actual responses for CP-02/S-01 before restoring the fixed search.
+
+### A — ordinary search: one USB seed record
+GET {{api}}/api/incidents/search?q=USB
+
+### B — absent term: []
+GET {{api}}/api/incidents/search?q=zz-no-match
+
+### C — the single permitted read-only control input: expanded result before the fix
+GET {{api}}/api/incidents/search?q=zz-no-match%27%20OR%20TRUE%20--%20
+
+### D — legitimate apostrophe: safe 500 Problem Details before the fix
+GET {{api}}/api/incidents/search?q=O%27Brien
+
+### T-02 — invalid numeric severity: 400 Problem Details
+POST {{api}}/api/incidents
+Content-Type: application/json
+
+{
+  "title": "LR02-invalid-severity",
+  "description": "Штучний запис для перевірки DTO.",
+  "severity": "7",
+  "occurredAtUtc": "2026-09-01T10:00:00Z"
+}
+
+### T-06 — missing incident: 404 Problem Details
+GET {{api}}/api/incidents/99999999-9999-9999-9999-999999999999
