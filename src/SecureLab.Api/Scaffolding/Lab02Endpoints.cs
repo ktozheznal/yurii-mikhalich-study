@@ -112,9 +112,11 @@ public static class Lab02Endpoints
             {
                 return Results.ValidationProblem(errors);
             }
+            
+            var duplicatedSince = now.AddDays(-30);
 
             var hasActiveTitle = await db.Incidents.AnyAsync(item =>
-                item.Title == title && item.Status != IncidentStatus.Closed, ct);
+                item.Title == title && item.Status != IncidentStatus.Closed && item.CreatedAtUtc >= duplicatedSince, ct);
             if (hasActiveTitle)
             {
                 return Results.Problem(

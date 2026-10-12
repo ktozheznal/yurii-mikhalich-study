@@ -1,0 +1,6 @@
+{
+    "title": "Title duplicated",
+    "description": "Incident with such title already exists.",
+    "severity": "Low",
+    "occurredAtUtc": "2024-06-15T10:30:00Z"
+}

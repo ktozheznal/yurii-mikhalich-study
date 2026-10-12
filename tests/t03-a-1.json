@@ -1,0 +1,6 @@
+{
+    "title": "Entry is illegal",
+    "description": "You are trying to enter the system from an unknown device.",
+    "severity": "Medium",
+    "occurredAtUtc": "2024-06-15T10:30:00Z"
+}
