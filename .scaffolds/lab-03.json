@@ -1,0 +1,7 @@
+{
+  "release": "lab-03-start-v1",
+  "inherits": "v0.2.0",
+  "base_commit": "db398f7b43033bb0c993dcae079314524c4f88c1",
+  "entry_parent": "a6d7fdba375288ffca1ba63a210cbf80f96c15af",
+  "installation": "manual integration preserving Lab02 fixes and existing evidence"
+}

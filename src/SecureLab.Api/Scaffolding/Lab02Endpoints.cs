@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using SecureLab.Api.Data;
 using SecureLab.Api.Data.Entities;
@@ -61,8 +62,11 @@ public static class Lab02Endpoints
             return Results.Ok(rows);
         });
 
-        app.MapPost("/api/incidents", async (CreateIncidentRequest request, SecureLabDbContext db, CancellationToken ct) =>
+        app.MapPost("/api/incidents", async (CreateIncidentRequest request, HttpContext context, SecureLabDbContext db, CancellationToken ct) =>
         {
+            if (!Guid.TryParse(context.User.FindFirstValue(ClaimTypes.NameIdentifier), out var ownerId))
+                return Results.Problem(statusCode: StatusCodes.Status500InternalServerError);
+
             var now = DateTimeOffset.UtcNow;
             var errors = new Dictionary<string, string[]>();
 
@@ -128,7 +132,7 @@ public static class Lab02Endpoints
             var incident = new Incident
             {
                 Id = Guid.NewGuid(),
-                OwnerUserId = DbSeeder.AliceId,
+                OwnerUserId = ownerId,
                 Title = title!,
                 Description = description!,
                 Severity = severity,
@@ -149,7 +153,7 @@ public static class Lab02Endpoints
                     incident.Status.ToString(),
                     incident.OccurredAtUtc,
                     incident.CreatedAtUtc));
-        });
+        }).RequireAuthorization();
     }
 
     private static string EscapeLikePattern(string value) => value
