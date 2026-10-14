@@ -141,6 +141,24 @@ select {
   color: #5c6b80;
 }
 
+.auth-form,
+.auth-form fieldset {
+  display: grid;
+  width: 100%;
+  gap: 0.85rem;
+  margin-top: 1rem;
+  padding: 0;
+  border: 0;
+}
+
+.auth-form label { display: grid; gap: 0.35rem; }
+.auth-form input,
+.auth-form textarea { width: 100%; padding: 0.65rem; border: 1px solid #aebbd0; border-radius: 0.45rem; font: inherit; }
+.auth-form button { justify-self: start; }
+.auth-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+button:disabled { opacity: 0.5; cursor: default; }
+.auth-page pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+
 @media (max-width: 760px) {
   .page-header,
   .toolbar,

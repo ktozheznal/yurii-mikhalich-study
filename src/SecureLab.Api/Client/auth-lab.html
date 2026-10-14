@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SecureLab · Обліковий запис</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/auth-lab.js" defer></script>
+</head>
+<body>
+  <header class="page-header">
+    <div><p class="eyebrow">SecureLab · ЛР 3</p><h1>Обліковий запис</h1>
+      <p>Увійдіть, щоб створити інцидент від свого імені.</p></div>
+    <a href="/">Трекер інцидентів</a>
+  </header>
+  <main class="auth-page">
+    <section class="panel" aria-labelledby="session-title">
+      <h2 id="session-title">Поточний сеанс</h2>
+      <p id="session-state" role="status" aria-live="polite">Перевірка сеансу…</p>
+      <pre id="profile" hidden></pre>
+      <div class="auth-actions"><button id="me" type="button">Мій профіль</button>
+        <button id="logout" type="button" disabled>Вийти</button></div>
+    </section>
+    <section class="panel" aria-labelledby="login-title">
+      <h2 id="login-title">Вхід</h2>
+      <form id="login" class="auth-form">
+        <label>Ім’я користувача<input name="userName" maxlength="64" autocomplete="username" required></label>
+        <label>Пароль<input name="password" type="password" maxlength="128" autocomplete="current-password" required></label>
+        <button type="submit">Увійти</button>
+      </form>
+      <p id="login-result" role="status" aria-live="polite"></p>
+    </section>
+    <section class="panel" aria-labelledby="register-title">
+      <h2 id="register-title">Реєстрація</h2>
+      <form id="register" class="auth-form">
+        <label>Ім’я користувача<input name="userName" maxlength="64" autocomplete="username" required></label>
+        <label>Електронна пошта<input name="email" type="email" maxlength="254" autocomplete="email" required></label>
+        <label>Ім’я для відображення<input name="displayName" maxlength="120" autocomplete="name" required></label>
+        <label>Пароль<input name="password" type="password" minlength="10" maxlength="128" autocomplete="new-password" required></label>
+        <p class="metadata">Від 10 символів: великі й малі літери, цифра та спеціальний символ.</p>
+        <button type="submit">Зареєструватися</button>
+      </form>
+      <p id="register-result" role="status" aria-live="polite"></p>
+    </section>
+    <section class="panel" aria-labelledby="create-title">
+      <h2 id="create-title">Новий інцидент</h2>
+      <p class="metadata">Власником автоматично стане користувач поточного сеансу.</p>
+      <form id="create" class="auth-form">
+        <fieldset id="create-fields" disabled>
+          <label>Заголовок<input name="title" maxlength="160" required></label>
+          <label>Опис<textarea name="description" maxlength="4000" rows="4" required></textarea></label>
+          <label>Критичність<select name="severity"><option>Low</option><option>Medium</option><option>High</option><option>Critical</option></select></label>
+          <label>Час події<input name="occurredAtUtc" type="datetime-local" required></label>
+          <button type="submit">Створити інцидент</button>
+        </fieldset>
+      </form>
+      <p id="create-result" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+</body>
+</html>

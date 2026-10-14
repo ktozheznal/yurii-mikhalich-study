@@ -1,0 +1,64 @@
+ЛР 03: безпечний витяг фактичних результатів
+Дата: 14.10.2026; ОС: Windows; SDK: 10.0.303
+Branch: lab3; base tag: v0.2.0
+PostgreSQL: isolated Compose project securelab-lab3-verification, port 54330
+Build: succeeded, 0 warnings, 0 errors
+Commands: scripts/verify-lab03.ps1; dotnet test tests/SecureLab.Api.Tests -c Release --no-build --no-restore
+
+lab03-round-1.trx
+{'total': '50', 'executed': '50', 'passed': '50', 'failed': '0', 'error': '0', 'timeout': '0', 'aborted': '0', 'inconclusive': '0', 'passedButRunAborted': '0', 'notRunnable': '0', 'notExecuted': '0', 'disconnected': '0', 'warning': '0', 'completed': '0', 'inProgress': '0', 'pending': '0'}
+
+lab03-round-2.trx
+{'total': '50', 'executed': '50', 'passed': '50', 'failed': '0', 'error': '0', 'timeout': '0', 'aborted': '0', 'inconclusive': '0', 'passedButRunAborted': '0', 'notRunnable': '0', 'notExecuted': '0', 'disconnected': '0', 'warning': '0', 'completed': '0', 'inProgress': '0', 'pending': '0'}
+
+Результати сценаріїв після другого reset:
+Passed | SecureLab.Api.Tests.AuthenticationMechanicsTests.RealCookie_ReachesSessionCheck
+Passed | SecureLab.Api.Tests.IncidentEndpointTests.ClientScript_DoesNotUseDangerousInnerHtmlSink
+Passed | SecureLab.Api.Tests.IncidentEndpointTests.GetDetails_DoesNotExposeInternalOwnerFields
+Passed | SecureLab.Api.Tests.IncidentEndpointTests.GetDetails_ForUnknownId_ReturnsProblemDetails404
+Passed | SecureLab.Api.Tests.IncidentEndpointTests.GetList_ReturnsSeededIncidents
+Passed | SecureLab.Api.Tests.Lab02ContractTests.T01_ValidCreate_NormalizesDateAndIgnoresServerManagedFields
+Passed | SecureLab.Api.Tests.Lab02ContractTests.T02_InvalidDto_ReturnsSafeValidationProblem(scenario: "empty-title", field: "title")
+Passed | SecureLab.Api.Tests.Lab02ContractTests.T02_InvalidDto_ReturnsSafeValidationProblem(scenario: "future-date", field: "occurredAtUtc")
+Passed | SecureLab.Api.Tests.Lab02ContractTests.T02_InvalidDto_ReturnsSafeValidationProblem(scenario: "long-description-before-trim", field: "description")
+Passed | SecureLab.Api.Tests.Lab02ContractTests.T02_InvalidDto_ReturnsSafeValidationProblem(scenario: "long-title-before-trim", field: "title")
+Passed | SecureLab.Api.Tests.Lab02ContractTests.T02_InvalidDto_ReturnsSafeValidationProblem(scenario: "missing-date", field: "occurredAtUtc")
+Passed | SecureLab.Api.Tests.Lab02ContractTests.T02_InvalidDto_ReturnsSafeValidationProblem(scenario: "numeric-severity", field: "severity")
+Passed | SecureLab.Api.Tests.Lab02ContractTests.T03_DuplicateActiveTitleConflicts_ButClosedAndDifferentCaseDoNot
+Passed | SecureLab.Api.Tests.Lab02ContractTests.T06_UnknownIncident_ReturnsSafeProblemDetails
+Passed | SecureLab.Api.Tests.Lab02ContractTests.T09_HighDescription_Rejects39AndAccepts40AfterTrim
+Passed | SecureLab.Api.Tests.Lab02SearchTests.S02_ControlInput_DoesNotExpandResults
+Passed | SecureLab.Api.Tests.Lab02SearchTests.Search_TreatsLikeMetacharactersAsLiteralText(character: "%")
+Passed | SecureLab.Api.Tests.Lab02SearchTests.Search_TreatsLikeMetacharactersAsLiteralText(character: "\\")
+Passed | SecureLab.Api.Tests.Lab02SearchTests.Search_TreatsLikeMetacharactersAsLiteralText(character: "_")
+Passed | SecureLab.Api.Tests.Lab02SearchTests.Search_UsesContractRanksAndIdAsTieBreaker
+Passed | SecureLab.Api.Tests.Lab02SearchTests.T04_OrdinaryAndApostropheTerms_FindSeedRecords
+Passed | SecureLab.Api.Tests.Lab02SearchTests.T05_UnknownSort_ReturnsSafeValidationProblem(sortBy: "created_at_utc")
+Passed | SecureLab.Api.Tests.Lab02SearchTests.T05_UnknownSort_ReturnsSafeValidationProblem(sortBy: "price")
+Passed | SecureLab.Api.Tests.Lab03AuthenticationTests.A01_AnonymousMeAndCreate_Return401WithoutRedirect_EvenWithForgedHeader
+Passed | SecureLab.Api.Tests.Lab03AuthenticationTests.A02_LoginThenMe_ReturnsOnlyVerifiedSafeFields
+Passed | SecureLab.Api.Tests.Lab03AuthenticationTests.A03_ValidAliceCookie_WithBobDemoHeader_DoesNotChangeMe
+Passed | SecureLab.Api.Tests.Lab03AuthenticationTests.A04_BobCreateWithoutOwner_PersistsBobFromPrincipal
+Passed | SecureLab.Api.Tests.Lab03AuthenticationTests.A05_BobCreateWithForgedAliceOwner_PersistsBobFromPrincipal
+Passed | SecureLab.Api.Tests.Lab03AuthenticationTests.A06_Logout_SameCookieClientLosesAccessToMeAndCreate
+Passed | SecureLab.Api.Tests.Lab03AuthenticationTests.A07_UnknownUserAndWrongPassword_HaveSameExternalFailure
+Passed | SecureLab.Api.Tests.Lab03CookieProfileTests.Login_ActualCookieFlagsMatchEnvironmentAndRequestScheme(environment: "Development", origin: "http://localhost", secure: False)
+Passed | SecureLab.Api.Tests.Lab03CookieProfileTests.Login_ActualCookieFlagsMatchEnvironmentAndRequestScheme(environment: "Development", origin: "https://localhost", secure: True)
+Passed | SecureLab.Api.Tests.Lab03CookieProfileTests.Login_ActualCookieFlagsMatchEnvironmentAndRequestScheme(environment: "Production", origin: "http://localhost", secure: True)
+Passed | SecureLab.Api.Tests.Lab03CookieProfileTests.Login_ActualCookieFlagsMatchEnvironmentAndRequestScheme(environment: "Production", origin: "https://localhost", secure: True)
+Passed | SecureLab.Api.Tests.Lab03RateLimitAndEventsTests.AuthenticationEvents_RecordSuccessFailureLogoutAndLimit_WithoutCredentials
+Passed | SecureLab.Api.Tests.Lab03RateLimitAndEventsTests.LoginQuota_IsSharedAcrossClients_RecoversAfterRealWindow_AndFreshHostIsIndependent
+Passed | SecureLab.Api.Tests.Lab03RegistrationTests.DuplicateRegistration_ReturnsConsistent409_WithoutPartialAccount(scenario: "same-email")
+Passed | SecureLab.Api.Tests.Lab03RegistrationTests.DuplicateRegistration_ReturnsConsistent409_WithoutPartialAccount(scenario: "same-name")
+Passed | SecureLab.Api.Tests.Lab03RegistrationTests.T01_Register_UsesStandardVerifierAndServerManagedIdAndRole
+Passed | SecureLab.Api.Tests.Lab03RegistrationTests.T02_InvalidRegistration_ReturnsSafe400_AndDoesNotSaveUser(scenario: "bad-email")
+Passed | SecureLab.Api.Tests.Lab03RegistrationTests.T02_InvalidRegistration_ReturnsSafe400_AndDoesNotSaveUser(scenario: "long-display-name")
+Passed | SecureLab.Api.Tests.Lab03RegistrationTests.T02_InvalidRegistration_ReturnsSafe400_AndDoesNotSaveUser(scenario: "long-email")
+Passed | SecureLab.Api.Tests.Lab03RegistrationTests.T02_InvalidRegistration_ReturnsSafe400_AndDoesNotSaveUser(scenario: "long-name")
+Passed | SecureLab.Api.Tests.Lab03RegistrationTests.T02_InvalidRegistration_ReturnsSafe400_AndDoesNotSaveUser(scenario: "long-password")
+Passed | SecureLab.Api.Tests.Lab03RegistrationTests.T02_InvalidRegistration_ReturnsSafe400_AndDoesNotSaveUser(scenario: "missing-name")
+Passed | SecureLab.Api.Tests.Lab03RegistrationTests.T02_InvalidRegistration_ReturnsSafe400_AndDoesNotSaveUser(scenario: "missing-password")
+Passed | SecureLab.Api.Tests.Lab03RegistrationTests.T02_InvalidRegistration_ReturnsSafe400_AndDoesNotSaveUser(scenario: "weak-password")
+Passed | SecureLab.Api.Tests.Lab03SeedTests.Seed_PreservesGuidRolesOwnersAndStandardPasswordVerifier
+Passed | SecureLab.Api.Tests.SearchMechanicsTests.Search_AllowsApostropheInTerm_AndRejectsUnsafeSort
+Passed | SecureLab.Api.Tests.SearchMechanicsTests.Search_ReturnsJson

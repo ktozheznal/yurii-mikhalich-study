@@ -1,0 +1,17 @@
+diff --git a/src/SecureLab.Api/Scaffolding/Lab02Endpoints.cs b/src/SecureLab.Api/Scaffolding/Lab02Endpoints.cs
+index d2795c6..90d57b3 100644
+--- a/src/SecureLab.Api/Scaffolding/Lab02Endpoints.cs
++++ b/src/SecureLab.Api/Scaffolding/Lab02Endpoints.cs
+@@ -112,9 +112,11 @@ public static class Lab02Endpoints
+             {
+                 return Results.ValidationProblem(errors);
+             }
++            
++            var duplicatedSince = now.AddDays(-30);
+ 
+             var hasActiveTitle = await db.Incidents.AnyAsync(item =>
+-                item.Title == title && item.Status != IncidentStatus.Closed, ct);
++                item.Title == title && item.Status != IncidentStatus.Closed && item.CreatedAtUtc >= duplicatedSince, ct);
+             if (hasActiveTitle)
+             {
+                 return Results.Problem(

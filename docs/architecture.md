@@ -61,6 +61,34 @@
 дає `404` Problem Details замість `400`. Некоректний параметр і відсутній ресурс —
 різна семантика.
 
+## Автентифікація ЛР 3
+
+`ApplicationUser : IdentityUser<Guid>` і `SecureLabDbContext : IdentityDbContext`
+утворюють єдиний Identity/EF store. Надана migration `Lab03Identity` переносить
+сталі user IDs і доменні FK до `identity_users`; початкові migrations залишені
+для відтворення історії схеми. `StudyUser` більше не входить до поточної EF-моделі.
+
+`Lab03Identity` реєструє стандартні UserManager/SignInManager та application
+cookie. Порядок middleware: authentication → authorization → rate limiter.
+Register має окремі request/response DTO, серверний Guid і роль Reporter;
+login використовує `PasswordSignInAsync`, logout - `SignOutAsync`.
+`/api/me` читає лише NameIdentifier/Name/Role claims із `HttpContext.User`.
+
+Фактичний `POST /api/incidents` у `Lab02Endpoints` захищений
+`.RequireAuthorization()`, а `OwnerUserId` береться з перевіреного Guid claim.
+Client owner/id/role/status відсутні у request DTO. Параметризований search,
+валідація та предметні правила ЛР 2 збережені.
+
+Cookie profile: HttpOnly, SameSite=Lax, SameAsRequest у Development та Secure
+Always поза ним. HTTP auth відмови - 401/403 без redirect. Login має окремий
+fixed-window limiter 5/60 за RemoteIpAddress; події містять лише тип, час,
+результат, перевірений user ID і trace ID. SameSite не є завершеною CSRF-моделлю;
+це навчальний борг до ЛР 6.
+
+Browser flow: `/auth-lab.html` + `/auth-lab.js`, same-origin fetch, safe DOM
+textContent, очищення password inputs і profile після logout/401. Докази й
+межі перевірки: [lab03-report.md](lab03-report.md).
+
 ## Межі довіри
 
 | Межа | Дані, що її перетинають | Чому даним ще не можна довіряти | Де перевіряємо або обмежуємо |
