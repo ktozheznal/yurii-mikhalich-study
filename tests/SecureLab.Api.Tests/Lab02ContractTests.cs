@@ -9,9 +9,29 @@ using SecureLab.Api.Scaffolding;
 namespace SecureLab.Api.Tests;
 
 public sealed class Lab02ContractTests(SecureLabApiFactory factory)
-    : IClassFixture<SecureLabApiFactory>
+    : IClassFixture<SecureLabApiFactory>, IAsyncLifetime
 {
-    private readonly HttpClient _client = factory.CreateClient();
+    private readonly Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<Program> _host =
+        factory.WithWebHostBuilder(_ => { });
+    private HttpClient _client = null!;
+
+    public async Task InitializeAsync()
+    {
+        _client = _host.CreateClient(new Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryClientOptions
+        {
+            BaseAddress = new Uri("https://localhost"), AllowAutoRedirect = false, HandleCookies = true
+        });
+        using var login = await _client.PostAsJsonAsync("/api/auth/login",
+            new { userName = "alice", password = CookieClient.SeedPassword });
+        Assert.Equal(HttpStatusCode.NoContent, login.StatusCode);
+    }
+
+    public Task DisposeAsync()
+    {
+        _client.Dispose();
+        _host.Dispose();
+        return Task.CompletedTask;
+    }
 
     [Fact]
     public async Task T01_ValidCreate_NormalizesDateAndIgnoresServerManagedFields()

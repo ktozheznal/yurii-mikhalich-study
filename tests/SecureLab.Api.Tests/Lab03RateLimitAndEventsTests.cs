@@ -28,7 +28,7 @@ public sealed class Lab03RateLimitAndEventsTests : IDisposable
         Assert.Equal(HttpStatusCode.TooManyRequests, limited.StatusCode);
         Assert.True(limited.Headers.RetryAfter?.Delta > TimeSpan.Zero);
         Assert.False(limited.Headers.Contains("Set-Cookie"));
-        using var publicRead = await second.GetAsync("/api/incidents");
+        using var publicRead = await second.GetAsync("/health");
         Assert.Equal(HttpStatusCode.OK, publicRead.StatusCode);
         using var newHost = _factory.WithWebHostBuilder(_ => { });
         using var independent = newHost.CreateClient();

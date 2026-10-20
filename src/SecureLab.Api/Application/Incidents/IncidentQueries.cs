@@ -5,7 +5,7 @@ using SecureLab.Api.Presentation.Contracts;
 
 namespace SecureLab.Api.Application.Incidents;
 
-public sealed class IncidentQueries(SecureLabDbContext dbContext, ILogger<IncidentQueries> logger)
+public sealed class IncidentQueries(SecureLabDbContext dbContext, ILogger<IncidentQueries> logger, IncidentAccess access)
 {
     public async Task<IReadOnlyList<IncidentListItemResponse>> GetListAsync(
         IncidentStatus? status,
@@ -13,7 +13,7 @@ public sealed class IncidentQueries(SecureLabDbContext dbContext, ILogger<Incide
     {
         logger.LogInformation("Loading incidents with status filter {Status}", status);
 
-        var query = dbContext.Incidents.AsNoTracking();
+        var query = access.Scope(dbContext.Incidents.AsNoTracking());
         if (status is not null)
         {
             query = query.Where(incident => incident.Status == status);
@@ -41,7 +41,7 @@ public sealed class IncidentQueries(SecureLabDbContext dbContext, ILogger<Incide
         IncidentStatus? status,
         CancellationToken cancellationToken)
     {
-        var query = dbContext.Incidents.AsNoTracking();
+        var query = access.Scope(dbContext.Incidents.AsNoTracking());
         if (status is not null)
         {
             query = query.Where(incident => incident.Status == status);
@@ -74,8 +74,7 @@ public sealed class IncidentQueries(SecureLabDbContext dbContext, ILogger<Incide
     {
         logger.LogInformation("Loading incident {IncidentId}", id);
 
-        return dbContext.Incidents
-            .AsNoTracking()
+        return access.Scope(dbContext.Incidents.AsNoTracking())
             .Where(incident => incident.Id == id)
             .Select(incident => new IncidentDetailsResponse(
                 incident.Id,
@@ -87,7 +86,7 @@ public sealed class IncidentQueries(SecureLabDbContext dbContext, ILogger<Incide
                 incident.CreatedAtUtc,
                 incident.Owner.DisplayName,
                 incident.Comments
-                    .Where(comment => !comment.IsInternal)
+                    .Where(comment => !comment.IsInternal || access.CanReadInternal)
                     .OrderBy(comment => comment.CreatedAtUtc)
                     .Select(comment => new IncidentCommentResponse(
                         comment.Id,

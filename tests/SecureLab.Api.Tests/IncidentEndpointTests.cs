@@ -7,19 +7,27 @@ using SecureLab.Api.Presentation.Contracts;
 namespace SecureLab.Api.Tests;
 
 public sealed class IncidentEndpointTests(SecureLabApiFactory factory)
-    : IClassFixture<SecureLabApiFactory>
+    : IClassFixture<SecureLabApiFactory>, IAsyncLifetime
 {
-    private readonly HttpClient _client = factory.CreateClient();
+    private readonly Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<Program> _host = factory.WithWebHostBuilder(_ => { });
+    private HttpClient _client = null!;
+    public async Task InitializeAsync()
+    {
+        _client = _host.CreateClient();
+        using var login = await _client.PostAsJsonAsync("/api/auth/login", new { userName = "alice", password = CookieClient.SeedPassword });
+        Assert.Equal(HttpStatusCode.NoContent, login.StatusCode);
+    }
+    public Task DisposeAsync() { _client.Dispose(); _host.Dispose(); return Task.CompletedTask; }
 
     [Fact]
-    public async Task GetList_ReturnsSeededIncidents()
+    public async Task GetList_ReturnsOwnSeededIncidents_WithoutBob()
     {
         var incidents = await _client.GetFromJsonAsync<List<IncidentListItemResponse>>(
             "/api/incidents");
 
         Assert.NotNull(incidents);
         Assert.Contains(incidents, incident => incident.Id == DbSeeder.AliceIncidentId);
-        Assert.Contains(incidents, incident => incident.Id == DbSeeder.BobIncidentId);
+        Assert.DoesNotContain(incidents, incident => incident.Id == DbSeeder.BobIncidentId);
     }
 
     [Fact]

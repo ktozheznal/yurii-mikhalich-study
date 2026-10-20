@@ -9,6 +9,7 @@ public static class IncidentEndpoints
     public static IEndpointRouteBuilder MapIncidentEndpoints(this IEndpointRouteBuilder endpoints)
     {
         var group = endpoints.MapGroup("/api/incidents")
+            .RequireAuthorization()
             .WithTags("Incidents");
 
         group.MapGet("/", GetListAsync)
@@ -77,9 +78,13 @@ public static class IncidentEndpoints
 
     private static async Task<IResult> GetDetailsAsync(
         Guid id,
+        SecureLab.Api.Data.SecureLabDbContext db,
+        IncidentAccess access,
         IncidentQueries queries,
         CancellationToken cancellationToken)
     {
+        var resource = await db.Incidents.FindAsync([id], cancellationToken);
+        if (resource is not null && !access.CanRead(resource)) return access.Denied("read", id);
         var incident = await queries.GetDetailsAsync(id, cancellationToken);
         return incident is null
             ? Results.Problem(

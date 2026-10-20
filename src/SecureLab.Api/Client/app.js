@@ -14,7 +14,9 @@ async function apiFetch(path, options = {}) {
 
   if (!response.ok) {
     const problem = await response.json().catch(() => null);
-    throw new Error(problem?.title ?? `HTTP ${response.status}`);
+    const message = response.status === 401 ? "Увійдіть до облікового запису."
+      : problem?.title ?? "Запит відхилено.";
+    throw new Error(`HTTP ${response.status}: ${message}`);
   }
 
   return response.json();
@@ -136,6 +138,11 @@ filterForm.addEventListener("submit", (event) => {
 
 summaryButton.addEventListener("click", () => {
   loadSeveritySummary();
+});
+
+document.querySelector("#details-form").addEventListener("submit", (event) => {
+  event.preventDefault();
+  loadIncidentDetails(new FormData(event.currentTarget).get("id").trim());
 });
 
 loadIncidents();

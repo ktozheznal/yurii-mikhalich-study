@@ -10,7 +10,7 @@ public static class Lab02Endpoints
 {
     public static void MapLab02Endpoints(this WebApplication app)
     {
-        app.MapGet("/api/incidents/search", async (string? q, string? sortBy, SecureLabDbContext db, CancellationToken ct) =>
+        app.MapGet("/api/incidents/search", async (string? q, string? sortBy, SecureLab.Api.Application.Incidents.IncidentAccess access, SecureLabDbContext db, CancellationToken ct) =>
         {
             var normalizedSort = NormalizeSort(sortBy);
             if (normalizedSort is null)
@@ -21,7 +21,7 @@ public static class Lab02Endpoints
                 });
             }
 
-            var query = db.Incidents.AsNoTracking();
+            var query = access.Scope(db.Incidents.AsNoTracking());
             var searchTerm = q?.Trim();
             if (!string.IsNullOrEmpty(searchTerm))
             {
@@ -60,7 +60,7 @@ public static class Lab02Endpoints
                 .ToListAsync(ct);
 
             return Results.Ok(rows);
-        });
+        }).RequireAuthorization();
 
         app.MapPost("/api/incidents", async (CreateIncidentRequest request, HttpContext context, SecureLabDbContext db, CancellationToken ct) =>
         {

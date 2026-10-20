@@ -1,0 +1,26 @@
+Збірка та два повні прогони після reset окремої БД ЛР 4
+
+build.log
+  SecureLab.Api -> C:\Users\30119\ktozheznal-study\yurii-mikhalich-study\src\SecureLab.Api\bin\Release\net10.0\SecureLab.Api.dll
+  SecureLab.Api.Tests -> C:\Users\30119\ktozheznal-study\yurii-mikhalich-study\tests\SecureLab.Api.Tests\bin\Release\net10.0\SecureLab.Api.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.27
+
+tests-1.log
+Test run for C:\Users\30119\ktozheznal-study\yurii-mikhalich-study\tests\SecureLab.Api.Tests\bin\Release\net10.0\SecureLab.Api.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+Results File: C:\Users\30119\ktozheznal-study\yurii-mikhalich-study\TestResults\lab04-round-1.trx
+
+Passed!  - Failed:     0, Passed:    70, Skipped:     0, Total:    70, Duration: 1 m 13 s - SecureLab.Api.Tests.dll (net10.0)
+
+tests-2.log
+Test run for C:\Users\30119\ktozheznal-study\yurii-mikhalich-study\tests\SecureLab.Api.Tests\bin\Release\net10.0\SecureLab.Api.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+Results File: C:\Users\30119\ktozheznal-study\yurii-mikhalich-study\TestResults\lab04-round-2.trx
+
+Passed!  - Failed:     0, Passed:    70, Skipped:     0, Total:    70, Duration: 1 m 14 s - SecureLab.Api.Tests.dll (net10.0)
+
