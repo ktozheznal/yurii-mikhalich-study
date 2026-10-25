@@ -17,8 +17,12 @@ public static class LoginRateLimit
                 context.Connection.RemoteIpAddress?.ToString() ?? "unknown",
                 _ => new FixedWindowRateLimiterOptions
                 {
-                    PermitLimit = 5, Window = TimeSpan.FromMinutes(1), QueueLimit = 0,
-                    AutoReplenishment = true
+                  PermitLimit = builder.Configuration.GetValue<int>(
+                    "LoginRateLimit:PermitLimit", 5),
+                    Window = TimeSpan.FromMinutes(builder.Configuration.GetValue<int>(
+                        "LoginRateLimit:WindowMinutes", 1)),
+                        QueueLimit = 0,
+                        AutoReplenishment = true
                 }));
             options.OnRejected = (context, _) =>
             {
