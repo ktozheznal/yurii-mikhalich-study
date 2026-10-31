@@ -15,8 +15,8 @@ using SecureLab.Api.Scaffolding;
 
 namespace SecureLab.Api.Tests;
 
-public sealed class Lab04AuthorizationTests : IDisposable
-{
+public sealed class Lab04AuthorizationTests(
+    Xunit.Abstractions.ITestOutputHelper output) : IDisposable{
     private readonly SecureLabApiFactory _factory = new();
     private const string InternalId = "30000000-0000-0000-0000-000000000003";
     private static string PathFor(Guid id) => $"/api/incidents/{id}";
@@ -92,7 +92,50 @@ public sealed class Lab04AuthorizationTests : IDisposable
         Assert.Equal(HttpStatusCode.Forbidden, response.StatusCode);
         Assert.Equal(before, await StateAsync(DbSeeder.BobIncidentId));
     }
+    [Fact]
+    public async Task Lab4def()
+    {
+        using var alice = await _factory.LoginAsync("alice", CookieClient.SeedPassword);
+        using var bob = await _factory.LoginAsync("bob", CookieClient.SeedPassword);
 
+        var i1 = await CreateAsync(alice);
+        var i2 = Guid.Empty;
+
+        try
+        {
+            i2 = await CreateAsync(bob);
+            var before = await StateAsync(i1);
+
+            const string title = "Probe";
+            const string description = "Test description";
+
+            output.WriteLine($"I1={i1}; I2={i2}; before={before}");
+
+            using var first = await bob.PutAsJsonAsync(PathFor(i1), new {title, description});
+            var afterFirst = await StateAsync(i1);
+
+            output.WriteLine($"no id = {(int)first.StatusCode}; after={afterFirst}");
+
+            using var second = await bob.PutAsJsonAsync(PathFor(i1), new {title, description, id = i2});
+            var afterSecond = await StateAsync(i1);
+
+            output.WriteLine($"third = {(int)second.StatusCode}; after={afterSecond}");
+
+            Assert.Equal(HttpStatusCode.Forbidden, first.StatusCode);
+
+            Assert.Equal(before, afterFirst);
+
+            Assert.Equal(HttpStatusCode.Forbidden, second.StatusCode);
+
+            Assert.Equal(before, afterSecond);
+        }
+        finally
+        {
+            if (i2 != Guid.Empty) await CleanupAsync(i2);
+
+            await CleanupAsync(i1);
+        }
+    }
     [Fact]
     public async Task A03R_Analyst_ReadsForAnalysis_WithoutContentOrDeleteRights()
     {

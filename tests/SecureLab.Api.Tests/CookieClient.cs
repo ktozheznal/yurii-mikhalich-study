@@ -15,10 +15,11 @@ public static class CookieClient
             BaseAddress = new Uri("https://localhost"), AllowAutoRedirect = false, HandleCookies = true
         });
         using var response = await client.PostAsJsonAsync("/api/auth/login", new { userName, password });
-        if (!response.IsSuccessStatusCode)
+               if (!response.IsSuccessStatusCode)
         {
             client.Dispose();
-            throw new InvalidOperationException("Study login failed (credentials omitted).");
+            throw new InvalidOperationException(
+                $"Login HTTP {(int)response.StatusCode} ({response.StatusCode})");
         }
         return client;
     }
