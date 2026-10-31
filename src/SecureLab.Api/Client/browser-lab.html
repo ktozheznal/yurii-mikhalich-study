@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ЛР 05 Безпека браузера</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/browser-lab.css">
+  <script src="/browser-lab.js" defer></script>
+</head>
+<body>
+  <header class="page-header">
+    <div><p class="eyebrow">SecureLab · ЛР 05</p><h1>Картка інциденту</h1></div>
+    <div class="auth-actions"><a href="/">Трекер</a><a href="/auth-lab.html">Обліковий запис</a></div>
+  </header>
+  <main class="browser-lab">
+    <section class="panel">
+      <h2>Створити інцидент</h2>
+      <form id="edit" class="auth-form">
+        <label>Назва нового інциденту <input name="title" required maxlength="160"></label>
+        <label>Опис нового інциденту <textarea name="description" required maxlength="4000" rows="6"></textarea></label>
+        <button>Створити й прочитати</button>
+      </form>
+    </section>
+    <section class="panel">
+      <h2>Переглянути інцидент</h2>
+      <label for="incident-id">UUID інциденту</label>
+      <input id="incident-id" autocomplete="off">
+      <button id="load" type="button">Прочитати</button>
+      <p id="status" role="status" aria-live="polite"></p>
+      <h2 id="title"></h2>
+      <div id="description" class="plain-text"></div>
+      <h3>Коментарі</h3><div id="comments" class="plain-text"></div>
+    </section>
+  </main>
+  <span id="lab05-marker-target" hidden aria-hidden="true"></span>
+</body>
+</html>

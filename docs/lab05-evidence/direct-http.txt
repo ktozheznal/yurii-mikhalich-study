@@ -1,0 +1,26 @@
+Request: GET http://localhost:5080/health ; Origin: http://localhost:4173 ; curl.exe ; no credentials
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Sat, 31 Oct 2026 19:38:53 GMT
+Server: Kestrel
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: http://localhost:4173
+Transfer-Encoding: chunked
+X-Content-Type-Options: nosniff
+Referrer-Policy: no-referrer
+Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'
+
+{"status":"ready"}
+
+Request: GET http://localhost:5080/health ; Origin: http://localhost:4174 ; curl.exe ; no credentials
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Sat, 31 Oct 2026 19:38:53 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+X-Content-Type-Options: nosniff
+Referrer-Policy: no-referrer
+Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'
+
+{"status":"ready"}
+

@@ -1,0 +1,6 @@
+{
+  "src/SecureLab.Api/Program.cs": "a83090239ee9d2fc4e857d41c0476d68bb09a1a3d5dde66a5b0f9439643f04ef",
+  "src/SecureLab.Api/Data/DbSeeder.cs": "b0e2bcc0525cef819ebac5466951c275309f8adaf31b2d29ac6342c1bb0a9334",
+  "src/SecureLab.Api/Client/browser-lab.js": "04d9e0c572df239889a011968be7cf0eb5b76a6ab5d7b25669c27ae87a25f145",
+  "src/SecureLab.Api/Client/browser-lab.html": "d6d0c546f1dfc372e160fa28390976e93d67cae29296d8278d51399c35100570"
+}

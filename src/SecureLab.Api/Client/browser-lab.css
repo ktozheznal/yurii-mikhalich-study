@@ -1,0 +1,4 @@
+.browser-lab input, .browser-lab textarea { width: 100%; font: inherit; padding: .6rem; }
+.browser-lab label { display: grid; gap: .4rem; margin-top: 1rem; }
+.browser-lab #load { margin-top: .7rem; }
+.plain-text { white-space: pre-wrap; overflow-wrap: anywhere; }

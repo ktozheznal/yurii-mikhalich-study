@@ -25,6 +25,17 @@ builder.Services.AddScoped<IncidentAccess>();
 builder.AddLab03Identity();
 builder.AddLoginRateLimit();
 
+// The local CORS probe is a Development-only browser experiment.
+const string browserLabCors = "BrowserLabProbe";
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddCors(options => options.AddPolicy(browserLabCors, policy => policy
+        .WithOrigins("http://localhost:4173")
+        .WithMethods("GET")
+        .WithHeaders("X-Lab-Cors-Probe")
+        .AllowCredentials()));
+}
+
 var app = builder.Build();
 
 var resetRequested = args.Contains("--reset-database", StringComparer.Ordinal);
@@ -41,7 +52,16 @@ app.UseStatusCodePages();
 app.Use(async (context, next) =>
 {
     context.Response.Headers.XContentTypeOptions = "nosniff";
-    context.Response.Headers.Append("Referrer-Policy", "no-referrer");
+    context.Response.Headers["Referrer-Policy"] = "no-referrer";
+    // Scalar uses its own inline/CDN resources and is available only in Development.
+    var isDevelopmentApiReference = app.Environment.IsDevelopment()
+        && context.Request.Path.StartsWithSegments("/scalar");
+    if (!isDevelopmentApiReference)
+    {
+        context.Response.Headers["Content-Security-Policy"] =
+            "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; " +
+            "connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'";
+    }
     await next(context);
 });
 
@@ -51,6 +71,11 @@ if (app.Environment.IsDevelopment())
     app.MapScalarApiReference();
 }
 
+app.UseRouting();
+if (app.Environment.IsDevelopment())
+{
+    app.UseCors(browserLabCors);
+}
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseRateLimiter();

@@ -1,0 +1,463 @@
+{
+  "mode": "safe",
+  "browser": "156.0.8078.49",
+  "timestamp": "2026-10-31T19:31:00.898Z",
+  "xss": [
+    {
+      "user": "morgan",
+      "id": "672816db-e333-410a-9834-dd0a68ab8d3b",
+      "field": "description",
+      "status": "GET: 200",
+      "description": "<img src=x onerror=\"document.querySelector('#lab05-marker-target').setAttribute('data-lab05-marker','executed')\">",
+      "descriptionHtml": "&lt;img src=x onerror=\"document.querySelector('#lab05-marker-target').setAttribute('data-lab05-marker','executed')\"&gt;",
+      "comments": "",
+      "commentHtml": "",
+      "images": 0,
+      "marker": null,
+      "network": [
+        {
+          "event": "request",
+          "id": "729BBCC8433C4969B890A5D19A965B69",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.html",
+          "headers": {
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "type": "Document"
+        },
+        {
+          "event": "response",
+          "id": "729BBCC8433C4969B890A5D19A965B69",
+          "url": "http://localhost:5080/browser-lab.html",
+          "status": 200,
+          "headers": {
+            "Accept-Ranges": "bytes",
+            "Content-Length": "823",
+            "Content-Type": "text/html",
+            "Date": "Sat, 31 Oct 2026 19:31:00 GMT",
+            "ETag": "\"1dd696d96014737\"",
+            "Last-Modified": "Sat, 31 Oct 2026 19:25:28 GMT",
+            "Referrer-Policy": "no-referrer",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Document"
+        },
+        {
+          "event": "request",
+          "id": "41892.2",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.js",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "response",
+          "id": "41892.2",
+          "url": "http://localhost:5080/browser-lab.js",
+          "status": 200,
+          "headers": {
+            "ETag": "\"1dd696ded071f68\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "1640",
+            "Date": "Sat, 31 Oct 2026 19:31:00 GMT",
+            "Content-Type": "text/javascript",
+            "Last-Modified": "Sat, 31 Oct 2026 19:27:54 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "request",
+          "id": "41892.4",
+          "method": "GET",
+          "url": "http://localhost:5080/favicon.ico",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Other"
+        },
+        {
+          "event": "response",
+          "id": "41892.4",
+          "url": "http://localhost:5080/favicon.ico",
+          "status": 404,
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Referrer-Policy": "no-referrer",
+            "Date": "Sat, 31 Oct 2026 19:31:00 GMT",
+            "Content-Type": "application/problem+json",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Other"
+        },
+        {
+          "event": "request",
+          "id": "41892.5",
+          "method": "GET",
+          "url": "http://localhost:5080/api/incidents/672816db-e333-410a-9834-dd0a68ab8d3b",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "response",
+          "id": "41892.5",
+          "url": "http://localhost:5080/api/incidents/672816db-e333-410a-9834-dd0a68ab8d3b",
+          "status": 200,
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Referrer-Policy": "no-referrer",
+            "Date": "Sat, 31 Oct 2026 19:31:00 GMT",
+            "Content-Type": "application/json; charset=utf-8",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "request",
+          "id": "D59B6EB5CF904D1016DA426C5BAC3602",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.html",
+          "headers": {
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "type": "Document"
+        },
+        {
+          "event": "response",
+          "id": "D59B6EB5CF904D1016DA426C5BAC3602",
+          "url": "http://localhost:5080/browser-lab.html",
+          "status": 200,
+          "headers": {
+            "Accept-Ranges": "bytes",
+            "Content-Length": "823",
+            "Content-Type": "text/html",
+            "Date": "Sat, 31 Oct 2026 19:31:00 GMT",
+            "ETag": "\"1dd696d96014737\"",
+            "Last-Modified": "Sat, 31 Oct 2026 19:25:28 GMT",
+            "Referrer-Policy": "no-referrer",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Document"
+        },
+        {
+          "event": "request",
+          "id": "41892.7",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.js",
+          "headers": {
+            "Referer": ""
+          },
+          "type": "Script"
+        },
+        {
+          "event": "response",
+          "id": "41892.7",
+          "url": "http://localhost:5080/browser-lab.js",
+          "status": 200,
+          "headers": {
+            "ETag": "\"1dd696ded071f68\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "1640",
+            "Date": "Sat, 31 Oct 2026 19:31:00 GMT",
+            "Content-Type": "text/javascript",
+            "Last-Modified": "Sat, 31 Oct 2026 19:27:54 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "request",
+          "id": "41892.9",
+          "method": "GET",
+          "url": "http://localhost:5080/api/incidents/20000000-0000-0000-0000-000000000001",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "response",
+          "id": "41892.9",
+          "url": "http://localhost:5080/api/incidents/20000000-0000-0000-0000-000000000001",
+          "status": 200,
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Referrer-Policy": "no-referrer",
+            "Date": "Sat, 31 Oct 2026 19:31:01 GMT",
+            "Content-Type": "application/json; charset=utf-8",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Fetch"
+        }
+      ]
+    },
+    {
+      "user": "bob",
+      "id": "672816db-e333-410a-9834-dd0a68ab8d3b",
+      "field": "description",
+      "status": "GET: 403",
+      "description": "",
+      "descriptionHtml": "",
+      "comments": "",
+      "commentHtml": "",
+      "images": 0,
+      "marker": null,
+      "network": [
+        {
+          "event": "request",
+          "id": "9348DD54B60860EAF5536BB97CF98165",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.html",
+          "headers": {
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "type": "Document"
+        },
+        {
+          "event": "response",
+          "id": "9348DD54B60860EAF5536BB97CF98165",
+          "url": "http://localhost:5080/browser-lab.html",
+          "status": 200,
+          "headers": {
+            "Accept-Ranges": "bytes",
+            "Content-Length": "823",
+            "Content-Type": "text/html",
+            "Date": "Sat, 31 Oct 2026 19:31:00 GMT",
+            "ETag": "\"1dd696d96014737\"",
+            "Last-Modified": "Sat, 31 Oct 2026 19:25:28 GMT",
+            "Referrer-Policy": "no-referrer",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Document"
+        },
+        {
+          "event": "request",
+          "id": "18960.2",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.js",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "response",
+          "id": "18960.2",
+          "url": "http://localhost:5080/browser-lab.js",
+          "status": 200,
+          "headers": {
+            "ETag": "\"1dd696ded071f68\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "1640",
+            "Date": "Sat, 31 Oct 2026 19:31:00 GMT",
+            "Content-Type": "text/javascript",
+            "Last-Modified": "Sat, 31 Oct 2026 19:27:54 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "request",
+          "id": "18960.4",
+          "method": "GET",
+          "url": "http://localhost:5080/api/incidents/672816db-e333-410a-9834-dd0a68ab8d3b",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "response",
+          "id": "18960.4",
+          "url": "http://localhost:5080/api/incidents/672816db-e333-410a-9834-dd0a68ab8d3b",
+          "status": 403,
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Referrer-Policy": "no-referrer",
+            "Date": "Sat, 31 Oct 2026 19:31:00 GMT",
+            "Content-Type": "application/problem+json",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Fetch"
+        }
+      ]
+    },
+    {
+      "user": "morgan",
+      "id": "20000000-0000-0000-0000-000000000001",
+      "field": "comment",
+      "status": "GET: 200",
+      "description": "Одержано лист нібито від деканату. Вкладення не відкривалося.",
+      "descriptionHtml": "Одержано лист нібито від деканату. Вкладення не відкривалося.",
+      "comments": "Заголовки листа передано аналітику.<img src=x onerror=\"document.querySelector('#lab05-marker-target').setAttribute('data-lab05-marker','executed')\">Внутрішня примітка аналітика про перевірку вкладення.",
+      "commentHtml": "<p>Заголовки листа передано аналітику.</p><p>&lt;img src=x onerror=\"document.querySelector('#lab05-marker-target').setAttribute('data-lab05-marker','executed')\"&gt;</p><p>Внутрішня примітка аналітика про перевірку вкладення.</p>",
+      "images": 0,
+      "marker": null,
+      "network": [
+        {
+          "event": "request",
+          "id": "D59B6EB5CF904D1016DA426C5BAC3602",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.html",
+          "headers": {
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "type": "Document"
+        },
+        {
+          "event": "response",
+          "id": "D59B6EB5CF904D1016DA426C5BAC3602",
+          "url": "http://localhost:5080/browser-lab.html",
+          "status": 200,
+          "headers": {
+            "Accept-Ranges": "bytes",
+            "Content-Length": "823",
+            "Content-Type": "text/html",
+            "Date": "Sat, 31 Oct 2026 19:31:00 GMT",
+            "ETag": "\"1dd696d96014737\"",
+            "Last-Modified": "Sat, 31 Oct 2026 19:25:28 GMT",
+            "Referrer-Policy": "no-referrer",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Document"
+        },
+        {
+          "event": "request",
+          "id": "41892.7",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.js",
+          "headers": {
+            "Referer": ""
+          },
+          "type": "Script"
+        },
+        {
+          "event": "response",
+          "id": "41892.7",
+          "url": "http://localhost:5080/browser-lab.js",
+          "status": 200,
+          "headers": {
+            "ETag": "\"1dd696ded071f68\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "1640",
+            "Date": "Sat, 31 Oct 2026 19:31:00 GMT",
+            "Content-Type": "text/javascript",
+            "Last-Modified": "Sat, 31 Oct 2026 19:27:54 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "request",
+          "id": "41892.9",
+          "method": "GET",
+          "url": "http://localhost:5080/api/incidents/20000000-0000-0000-0000-000000000001",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "response",
+          "id": "41892.9",
+          "url": "http://localhost:5080/api/incidents/20000000-0000-0000-0000-000000000001",
+          "status": 200,
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Referrer-Policy": "no-referrer",
+            "Date": "Sat, 31 Oct 2026 19:31:01 GMT",
+            "Content-Type": "application/json; charset=utf-8",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Fetch"
+        }
+      ]
+    },
+    {
+      "case": "legitimate",
+      "inputLength": 43,
+      "roundTripEqual": true,
+      "htmlElements": 0
+    },
+    {
+      "case": "legitimate",
+      "inputLength": 22,
+      "roundTripEqual": true,
+      "htmlElements": 0
+    },
+    {
+      "case": "legitimate",
+      "inputLength": 4000,
+      "roundTripEqual": true,
+      "htmlElements": 0
+    }
+  ],
+  "cors": [],
+  "headers": [],
+  "csp": []
+}

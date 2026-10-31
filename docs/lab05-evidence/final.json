@@ -1,0 +1,1976 @@
+{
+  "mode": "final",
+  "browser": "156.0.8078.49",
+  "timestamp": "2026-10-31T19:33:57.445Z",
+  "xss": [
+    {
+      "user": "morgan",
+      "id": "672816db-e333-410a-9834-dd0a68ab8d3b",
+      "field": "description",
+      "status": "GET: 200",
+      "description": "<img src=x onerror=\"document.querySelector('#lab05-marker-target').setAttribute('data-lab05-marker','executed')\">",
+      "descriptionHtml": "&lt;img src=x onerror=\"document.querySelector('#lab05-marker-target').setAttribute('data-lab05-marker','executed')\"&gt;",
+      "comments": "",
+      "commentHtml": "",
+      "images": 0,
+      "marker": null,
+      "network": [
+        {
+          "event": "request",
+          "id": "4170E72F1820BCA43F174906EC92777D",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.html",
+          "headers": {
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "type": "Document"
+        },
+        {
+          "event": "response",
+          "id": "4170E72F1820BCA43F174906EC92777D",
+          "url": "http://localhost:5080/browser-lab.html",
+          "status": 200,
+          "headers": {
+            "Accept-Ranges": "bytes",
+            "Content-Length": "1696",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "Content-Type": "text/html",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "ETag": "\"1dd696e728acfa0\"",
+            "Last-Modified": "Sat, 31 Oct 2026 19:31:38 GMT",
+            "Referrer-Policy": "no-referrer",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Document"
+        },
+        {
+          "event": "request",
+          "id": "49592.2",
+          "method": "GET",
+          "url": "http://localhost:5080/styles.css",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "request",
+          "id": "49592.3",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.css",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "request",
+          "id": "49592.4",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.js",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "response",
+          "id": "49592.2",
+          "url": "http://localhost:5080/styles.css",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd5bfcf453cdc5\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "3013",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "Content-Type": "text/css",
+            "Last-Modified": "Wed, 14 Oct 2026 16:56:28 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "response",
+          "id": "49592.3",
+          "url": "http://localhost:5080/browser-lab.css",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd696e728ac808\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "264",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "Content-Type": "text/css",
+            "Last-Modified": "Sat, 31 Oct 2026 19:31:38 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "response",
+          "id": "49592.4",
+          "url": "http://localhost:5080/browser-lab.js",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd696e728ace3e\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "1854",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "Content-Type": "text/javascript",
+            "Last-Modified": "Sat, 31 Oct 2026 19:31:38 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "request",
+          "id": "49592.8",
+          "method": "GET",
+          "url": "http://localhost:5080/favicon.ico",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Other"
+        },
+        {
+          "event": "response",
+          "id": "49592.8",
+          "url": "http://localhost:5080/favicon.ico",
+          "status": 404,
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Referrer-Policy": "no-referrer",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "Content-Type": "application/problem+json",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Other"
+        },
+        {
+          "event": "request",
+          "id": "49592.9",
+          "method": "GET",
+          "url": "http://localhost:5080/api/incidents/672816db-e333-410a-9834-dd0a68ab8d3b",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "response",
+          "id": "49592.9",
+          "url": "http://localhost:5080/api/incidents/672816db-e333-410a-9834-dd0a68ab8d3b",
+          "status": 200,
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Referrer-Policy": "no-referrer",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "Date": "Sat, 31 Oct 2026 19:33:58 GMT",
+            "Content-Type": "application/json; charset=utf-8",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "request",
+          "id": "481AABAD3FE579D291F4105CC1E91F54",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.html",
+          "headers": {
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "type": "Document"
+        },
+        {
+          "event": "response",
+          "id": "481AABAD3FE579D291F4105CC1E91F54",
+          "url": "http://localhost:5080/browser-lab.html",
+          "status": 200,
+          "headers": {
+            "Accept-Ranges": "bytes",
+            "Content-Length": "1696",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "Content-Type": "text/html",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "ETag": "\"1dd696e728acfa0\"",
+            "Last-Modified": "Sat, 31 Oct 2026 19:31:38 GMT",
+            "Referrer-Policy": "no-referrer",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Document"
+        },
+        {
+          "event": "request",
+          "id": "49592.11",
+          "method": "GET",
+          "url": "http://localhost:5080/styles.css",
+          "headers": {
+            "Referer": ""
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "response",
+          "id": "49592.11",
+          "url": "http://localhost:5080/styles.css",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd5bfcf453cdc5\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "3013",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "Content-Type": "text/css",
+            "Last-Modified": "Wed, 14 Oct 2026 16:56:28 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "request",
+          "id": "49592.12",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.css",
+          "headers": {
+            "Referer": ""
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "response",
+          "id": "49592.12",
+          "url": "http://localhost:5080/browser-lab.css",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd696e728ac808\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "264",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "Content-Type": "text/css",
+            "Last-Modified": "Sat, 31 Oct 2026 19:31:38 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "request",
+          "id": "49592.13",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.js",
+          "headers": {
+            "Referer": ""
+          },
+          "type": "Script"
+        },
+        {
+          "event": "response",
+          "id": "49592.13",
+          "url": "http://localhost:5080/browser-lab.js",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd696e728ace3e\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "1854",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "Content-Type": "text/javascript",
+            "Last-Modified": "Sat, 31 Oct 2026 19:31:38 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "request",
+          "id": "49592.17",
+          "method": "GET",
+          "url": "http://localhost:5080/api/incidents/20000000-0000-0000-0000-000000000001",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "response",
+          "id": "49592.17",
+          "url": "http://localhost:5080/api/incidents/20000000-0000-0000-0000-000000000001",
+          "status": 200,
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Referrer-Policy": "no-referrer",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "Date": "Sat, 31 Oct 2026 19:33:58 GMT",
+            "Content-Type": "application/json; charset=utf-8",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "request",
+          "id": "07E9DD093061A30CECA4A3C5EFDE71E6",
+          "method": "GET",
+          "url": "http://localhost:5080/",
+          "headers": {
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "type": "Document"
+        },
+        {
+          "event": "response",
+          "id": "07E9DD093061A30CECA4A3C5EFDE71E6",
+          "url": "http://localhost:5080/",
+          "status": 200,
+          "headers": {
+            "Accept-Ranges": "bytes",
+            "Content-Length": "2792",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "Content-Type": "text/html",
+            "Date": "Sat, 31 Oct 2026 19:34:01 GMT",
+            "ETag": "\"1dd60b76160d9e8\"",
+            "Last-Modified": "Tue, 20 Oct 2026 17:21:02 GMT",
+            "Referrer-Policy": "no-referrer",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Document"
+        },
+        {
+          "event": "request",
+          "id": "49592.19",
+          "method": "GET",
+          "url": "http://localhost:5080/styles.css",
+          "headers": {
+            "Referer": ""
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "response",
+          "id": "49592.19",
+          "url": "http://localhost:5080/styles.css",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd5bfcf453cdc5\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "3013",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "Content-Type": "text/css",
+            "Last-Modified": "Wed, 14 Oct 2026 16:56:28 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "request",
+          "id": "49592.20",
+          "method": "GET",
+          "url": "http://localhost:5080/app.js",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "response",
+          "id": "49592.20",
+          "url": "http://localhost:5080/app.js",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd60b761f97a21\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "5025",
+            "Date": "Sat, 31 Oct 2026 19:34:01 GMT",
+            "Content-Type": "text/javascript",
+            "Last-Modified": "Tue, 20 Oct 2026 17:21:03 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "request",
+          "id": "49592.23",
+          "method": "GET",
+          "url": "http://localhost:5080/api/incidents",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "Accept": "application/json",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "request",
+          "id": "BCBACDF2060197F938C5CF896AABA74F",
+          "method": "GET",
+          "url": "http://localhost:5080/auth-lab.html",
+          "headers": {
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "type": "Document"
+        },
+        {
+          "event": "response",
+          "id": "BCBACDF2060197F938C5CF896AABA74F",
+          "url": "http://localhost:5080/auth-lab.html",
+          "status": 200,
+          "headers": {
+            "Accept-Ranges": "bytes",
+            "Content-Length": "3668",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "Content-Type": "text/html",
+            "Date": "Sat, 31 Oct 2026 19:34:01 GMT",
+            "ETag": "\"1dd5bfcf3bb21d4\"",
+            "Last-Modified": "Wed, 14 Oct 2026 16:56:27 GMT",
+            "Referrer-Policy": "no-referrer",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Document"
+        },
+        {
+          "event": "request",
+          "id": "49592.25",
+          "method": "GET",
+          "url": "http://localhost:5080/styles.css",
+          "headers": {
+            "Referer": ""
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "response",
+          "id": "49592.25",
+          "url": "http://localhost:5080/styles.css",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd5bfcf453cdc5\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "3013",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "Content-Type": "text/css",
+            "Last-Modified": "Wed, 14 Oct 2026 16:56:28 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "request",
+          "id": "49592.26",
+          "method": "GET",
+          "url": "http://localhost:5080/auth-lab.js",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "request",
+          "id": "49592.29",
+          "method": "GET",
+          "url": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJXaW5kb3dUZXh0IiBkPSJNMjAgM2gtMVYxaC0ydjJIN1YxSDV2Mkg0Yy0xLjEgMC0yIC45LTIgMnYxNmMwIDEuMS45IDIgMiAyaDE2YzEuMSAwIDItLjkgMi0yVjVjMC0xLjEtLjktMi0yLTJ6bTAgMThINFY4aDE2djEzeiIvPjxwYXRoIGZpbGw9Im5vbmUiIGQ9Ik0wIDBoMjR2MjRIMHoiLz48L3N2Zz4=",
+          "headers": {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "Referer": ""
+          },
+          "type": "Image"
+        },
+        {
+          "event": "response",
+          "id": "49592.29",
+          "url": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJXaW5kb3dUZXh0IiBkPSJNMjAgM2gtMVYxaC0ydjJIN1YxSDV2Mkg0Yy0xLjEgMC0yIC45LTIgMnYxNmMwIDEuMS45IDIgMiAyaDE2YzEuMSAwIDItLjkgMi0yVjVjMC0xLjEtLjktMi0yLTJ6bTAgMThINFY4aDE2djEzeiIvPjxwYXRoIGZpbGw9Im5vbmUiIGQ9Ik0wIDBoMjR2MjRIMHoiLz48L3N2Zz4=",
+          "status": 200,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          },
+          "type": "Image"
+        },
+        {
+          "event": "response",
+          "id": "49592.26",
+          "url": "http://localhost:5080/auth-lab.js",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd5bfd780da52b\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "6059",
+            "Date": "Sat, 31 Oct 2026 19:34:01 GMT",
+            "Content-Type": "text/javascript",
+            "Last-Modified": "Wed, 14 Oct 2026 17:00:09 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "request",
+          "id": "49592.30",
+          "method": "GET",
+          "url": "http://localhost:5080/api/me",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "Accept": "application/json",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "request",
+          "id": "2695FD1F2194E7B7107DEE6284E0A17C",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.html",
+          "headers": {
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "type": "Document"
+        },
+        {
+          "event": "response",
+          "id": "49592.30",
+          "url": "http://localhost:5080/api/me",
+          "status": 200,
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Referrer-Policy": "no-referrer",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "Date": "Sat, 31 Oct 2026 19:34:01 GMT",
+            "Content-Type": "application/json; charset=utf-8",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "response",
+          "id": "2695FD1F2194E7B7107DEE6284E0A17C",
+          "url": "http://localhost:5080/browser-lab.html",
+          "status": 200,
+          "headers": {
+            "Accept-Ranges": "bytes",
+            "Content-Length": "1696",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "Content-Type": "text/html",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "ETag": "\"1dd696e728acfa0\"",
+            "Last-Modified": "Sat, 31 Oct 2026 19:31:38 GMT",
+            "Referrer-Policy": "no-referrer",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Document"
+        },
+        {
+          "event": "request",
+          "id": "49592.32",
+          "method": "GET",
+          "url": "http://localhost:5080/styles.css",
+          "headers": {
+            "Referer": ""
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "response",
+          "id": "49592.32",
+          "url": "http://localhost:5080/styles.css",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd5bfcf453cdc5\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "3013",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "Content-Type": "text/css",
+            "Last-Modified": "Wed, 14 Oct 2026 16:56:28 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "request",
+          "id": "49592.33",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.css",
+          "headers": {
+            "Referer": ""
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "response",
+          "id": "49592.33",
+          "url": "http://localhost:5080/browser-lab.css",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd696e728ac808\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "264",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "Content-Type": "text/css",
+            "Last-Modified": "Sat, 31 Oct 2026 19:31:38 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "request",
+          "id": "49592.34",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.js",
+          "headers": {
+            "Referer": ""
+          },
+          "type": "Script"
+        },
+        {
+          "event": "response",
+          "id": "49592.34",
+          "url": "http://localhost:5080/browser-lab.js",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd696e728ace3e\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "1854",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "Content-Type": "text/javascript",
+            "Last-Modified": "Sat, 31 Oct 2026 19:31:38 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "request",
+          "id": "49592.38",
+          "method": "GET",
+          "url": "http://localhost:4173/x.png",
+          "headers": {
+            "Referer": ""
+          },
+          "type": "Image"
+        },
+        {
+          "event": "failed",
+          "id": "49592.38",
+          "error": "",
+          "blockedReason": "csp"
+        }
+      ]
+    },
+    {
+      "user": "bob",
+      "id": "672816db-e333-410a-9834-dd0a68ab8d3b",
+      "field": "description",
+      "status": "GET: 403",
+      "description": "",
+      "descriptionHtml": "",
+      "comments": "",
+      "commentHtml": "",
+      "images": 0,
+      "marker": null,
+      "network": [
+        {
+          "event": "request",
+          "id": "3AC3574170CAE66E8D7677F29AAD1AB5",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.html",
+          "headers": {
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "type": "Document"
+        },
+        {
+          "event": "response",
+          "id": "3AC3574170CAE66E8D7677F29AAD1AB5",
+          "url": "http://localhost:5080/browser-lab.html",
+          "status": 200,
+          "headers": {
+            "Accept-Ranges": "bytes",
+            "Content-Length": "1696",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "Content-Type": "text/html",
+            "Date": "Sat, 31 Oct 2026 19:33:58 GMT",
+            "ETag": "\"1dd696e728acfa0\"",
+            "Last-Modified": "Sat, 31 Oct 2026 19:31:38 GMT",
+            "Referrer-Policy": "no-referrer",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Document"
+        },
+        {
+          "event": "request",
+          "id": "3192.2",
+          "method": "GET",
+          "url": "http://localhost:5080/styles.css",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "request",
+          "id": "3192.3",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.css",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "request",
+          "id": "3192.4",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.js",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "response",
+          "id": "3192.2",
+          "url": "http://localhost:5080/styles.css",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd5bfcf453cdc5\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "3013",
+            "Date": "Sat, 31 Oct 2026 19:33:58 GMT",
+            "Content-Type": "text/css",
+            "Last-Modified": "Wed, 14 Oct 2026 16:56:28 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "response",
+          "id": "3192.3",
+          "url": "http://localhost:5080/browser-lab.css",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd696e728ac808\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "264",
+            "Date": "Sat, 31 Oct 2026 19:33:58 GMT",
+            "Content-Type": "text/css",
+            "Last-Modified": "Sat, 31 Oct 2026 19:31:38 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "response",
+          "id": "3192.4",
+          "url": "http://localhost:5080/browser-lab.js",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd696e728ace3e\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "1854",
+            "Date": "Sat, 31 Oct 2026 19:33:58 GMT",
+            "Content-Type": "text/javascript",
+            "Last-Modified": "Sat, 31 Oct 2026 19:31:38 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "request",
+          "id": "3192.8",
+          "method": "GET",
+          "url": "http://localhost:5080/api/incidents/672816db-e333-410a-9834-dd0a68ab8d3b",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "response",
+          "id": "3192.8",
+          "url": "http://localhost:5080/api/incidents/672816db-e333-410a-9834-dd0a68ab8d3b",
+          "status": 403,
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Referrer-Policy": "no-referrer",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "Date": "Sat, 31 Oct 2026 19:33:58 GMT",
+            "Content-Type": "application/problem+json",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Fetch"
+        }
+      ]
+    },
+    {
+      "user": "morgan",
+      "id": "20000000-0000-0000-0000-000000000001",
+      "field": "comment",
+      "status": "GET: 200",
+      "description": "Одержано лист нібито від деканату. Вкладення не відкривалося.",
+      "descriptionHtml": "Одержано лист нібито від деканату. Вкладення не відкривалося.",
+      "comments": "Заголовки листа передано аналітику.<img src=x onerror=\"document.querySelector('#lab05-marker-target').setAttribute('data-lab05-marker','executed')\">Внутрішня примітка аналітика про перевірку вкладення.",
+      "commentHtml": "<p>Заголовки листа передано аналітику.</p><p>&lt;img src=x onerror=\"document.querySelector('#lab05-marker-target').setAttribute('data-lab05-marker','executed')\"&gt;</p><p>Внутрішня примітка аналітика про перевірку вкладення.</p>",
+      "images": 0,
+      "marker": null,
+      "network": [
+        {
+          "event": "request",
+          "id": "481AABAD3FE579D291F4105CC1E91F54",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.html",
+          "headers": {
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "type": "Document"
+        },
+        {
+          "event": "response",
+          "id": "481AABAD3FE579D291F4105CC1E91F54",
+          "url": "http://localhost:5080/browser-lab.html",
+          "status": 200,
+          "headers": {
+            "Accept-Ranges": "bytes",
+            "Content-Length": "1696",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "Content-Type": "text/html",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "ETag": "\"1dd696e728acfa0\"",
+            "Last-Modified": "Sat, 31 Oct 2026 19:31:38 GMT",
+            "Referrer-Policy": "no-referrer",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Document"
+        },
+        {
+          "event": "request",
+          "id": "49592.11",
+          "method": "GET",
+          "url": "http://localhost:5080/styles.css",
+          "headers": {
+            "Referer": ""
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "response",
+          "id": "49592.11",
+          "url": "http://localhost:5080/styles.css",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd5bfcf453cdc5\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "3013",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "Content-Type": "text/css",
+            "Last-Modified": "Wed, 14 Oct 2026 16:56:28 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "request",
+          "id": "49592.12",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.css",
+          "headers": {
+            "Referer": ""
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "response",
+          "id": "49592.12",
+          "url": "http://localhost:5080/browser-lab.css",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd696e728ac808\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "264",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "Content-Type": "text/css",
+            "Last-Modified": "Sat, 31 Oct 2026 19:31:38 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "request",
+          "id": "49592.13",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.js",
+          "headers": {
+            "Referer": ""
+          },
+          "type": "Script"
+        },
+        {
+          "event": "response",
+          "id": "49592.13",
+          "url": "http://localhost:5080/browser-lab.js",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd696e728ace3e\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "1854",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "Content-Type": "text/javascript",
+            "Last-Modified": "Sat, 31 Oct 2026 19:31:38 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "request",
+          "id": "49592.17",
+          "method": "GET",
+          "url": "http://localhost:5080/api/incidents/20000000-0000-0000-0000-000000000001",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "response",
+          "id": "49592.17",
+          "url": "http://localhost:5080/api/incidents/20000000-0000-0000-0000-000000000001",
+          "status": 200,
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Referrer-Policy": "no-referrer",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "Date": "Sat, 31 Oct 2026 19:33:58 GMT",
+            "Content-Type": "application/json; charset=utf-8",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "request",
+          "id": "07E9DD093061A30CECA4A3C5EFDE71E6",
+          "method": "GET",
+          "url": "http://localhost:5080/",
+          "headers": {
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "type": "Document"
+        },
+        {
+          "event": "response",
+          "id": "07E9DD093061A30CECA4A3C5EFDE71E6",
+          "url": "http://localhost:5080/",
+          "status": 200,
+          "headers": {
+            "Accept-Ranges": "bytes",
+            "Content-Length": "2792",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "Content-Type": "text/html",
+            "Date": "Sat, 31 Oct 2026 19:34:01 GMT",
+            "ETag": "\"1dd60b76160d9e8\"",
+            "Last-Modified": "Tue, 20 Oct 2026 17:21:02 GMT",
+            "Referrer-Policy": "no-referrer",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Document"
+        },
+        {
+          "event": "request",
+          "id": "49592.19",
+          "method": "GET",
+          "url": "http://localhost:5080/styles.css",
+          "headers": {
+            "Referer": ""
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "response",
+          "id": "49592.19",
+          "url": "http://localhost:5080/styles.css",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd5bfcf453cdc5\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "3013",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "Content-Type": "text/css",
+            "Last-Modified": "Wed, 14 Oct 2026 16:56:28 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "request",
+          "id": "49592.20",
+          "method": "GET",
+          "url": "http://localhost:5080/app.js",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "response",
+          "id": "49592.20",
+          "url": "http://localhost:5080/app.js",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd60b761f97a21\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "5025",
+            "Date": "Sat, 31 Oct 2026 19:34:01 GMT",
+            "Content-Type": "text/javascript",
+            "Last-Modified": "Tue, 20 Oct 2026 17:21:03 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "request",
+          "id": "49592.23",
+          "method": "GET",
+          "url": "http://localhost:5080/api/incidents",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "Accept": "application/json",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "request",
+          "id": "BCBACDF2060197F938C5CF896AABA74F",
+          "method": "GET",
+          "url": "http://localhost:5080/auth-lab.html",
+          "headers": {
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "type": "Document"
+        },
+        {
+          "event": "response",
+          "id": "BCBACDF2060197F938C5CF896AABA74F",
+          "url": "http://localhost:5080/auth-lab.html",
+          "status": 200,
+          "headers": {
+            "Accept-Ranges": "bytes",
+            "Content-Length": "3668",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "Content-Type": "text/html",
+            "Date": "Sat, 31 Oct 2026 19:34:01 GMT",
+            "ETag": "\"1dd5bfcf3bb21d4\"",
+            "Last-Modified": "Wed, 14 Oct 2026 16:56:27 GMT",
+            "Referrer-Policy": "no-referrer",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Document"
+        },
+        {
+          "event": "request",
+          "id": "49592.25",
+          "method": "GET",
+          "url": "http://localhost:5080/styles.css",
+          "headers": {
+            "Referer": ""
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "response",
+          "id": "49592.25",
+          "url": "http://localhost:5080/styles.css",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd5bfcf453cdc5\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "3013",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "Content-Type": "text/css",
+            "Last-Modified": "Wed, 14 Oct 2026 16:56:28 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "request",
+          "id": "49592.26",
+          "method": "GET",
+          "url": "http://localhost:5080/auth-lab.js",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "request",
+          "id": "49592.29",
+          "method": "GET",
+          "url": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJXaW5kb3dUZXh0IiBkPSJNMjAgM2gtMVYxaC0ydjJIN1YxSDV2Mkg0Yy0xLjEgMC0yIC45LTIgMnYxNmMwIDEuMS45IDIgMiAyaDE2YzEuMSAwIDItLjkgMi0yVjVjMC0xLjEtLjktMi0yLTJ6bTAgMThINFY4aDE2djEzeiIvPjxwYXRoIGZpbGw9Im5vbmUiIGQ9Ik0wIDBoMjR2MjRIMHoiLz48L3N2Zz4=",
+          "headers": {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "Referer": ""
+          },
+          "type": "Image"
+        },
+        {
+          "event": "response",
+          "id": "49592.29",
+          "url": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJXaW5kb3dUZXh0IiBkPSJNMjAgM2gtMVYxaC0ydjJIN1YxSDV2Mkg0Yy0xLjEgMC0yIC45LTIgMnYxNmMwIDEuMS45IDIgMiAyaDE2YzEuMSAwIDItLjkgMi0yVjVjMC0xLjEtLjktMi0yLTJ6bTAgMThINFY4aDE2djEzeiIvPjxwYXRoIGZpbGw9Im5vbmUiIGQ9Ik0wIDBoMjR2MjRIMHoiLz48L3N2Zz4=",
+          "status": 200,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          },
+          "type": "Image"
+        },
+        {
+          "event": "response",
+          "id": "49592.26",
+          "url": "http://localhost:5080/auth-lab.js",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd5bfd780da52b\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "6059",
+            "Date": "Sat, 31 Oct 2026 19:34:01 GMT",
+            "Content-Type": "text/javascript",
+            "Last-Modified": "Wed, 14 Oct 2026 17:00:09 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "request",
+          "id": "49592.30",
+          "method": "GET",
+          "url": "http://localhost:5080/api/me",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "Accept": "application/json",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "request",
+          "id": "2695FD1F2194E7B7107DEE6284E0A17C",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.html",
+          "headers": {
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "type": "Document"
+        },
+        {
+          "event": "response",
+          "id": "49592.30",
+          "url": "http://localhost:5080/api/me",
+          "status": 200,
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Referrer-Policy": "no-referrer",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "Date": "Sat, 31 Oct 2026 19:34:01 GMT",
+            "Content-Type": "application/json; charset=utf-8",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "response",
+          "id": "2695FD1F2194E7B7107DEE6284E0A17C",
+          "url": "http://localhost:5080/browser-lab.html",
+          "status": 200,
+          "headers": {
+            "Accept-Ranges": "bytes",
+            "Content-Length": "1696",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "Content-Type": "text/html",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "ETag": "\"1dd696e728acfa0\"",
+            "Last-Modified": "Sat, 31 Oct 2026 19:31:38 GMT",
+            "Referrer-Policy": "no-referrer",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Document"
+        },
+        {
+          "event": "request",
+          "id": "49592.32",
+          "method": "GET",
+          "url": "http://localhost:5080/styles.css",
+          "headers": {
+            "Referer": ""
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "response",
+          "id": "49592.32",
+          "url": "http://localhost:5080/styles.css",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd5bfcf453cdc5\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "3013",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "Content-Type": "text/css",
+            "Last-Modified": "Wed, 14 Oct 2026 16:56:28 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "request",
+          "id": "49592.33",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.css",
+          "headers": {
+            "Referer": ""
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "response",
+          "id": "49592.33",
+          "url": "http://localhost:5080/browser-lab.css",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd696e728ac808\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "264",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "Content-Type": "text/css",
+            "Last-Modified": "Sat, 31 Oct 2026 19:31:38 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Stylesheet"
+        },
+        {
+          "event": "request",
+          "id": "49592.34",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.js",
+          "headers": {
+            "Referer": ""
+          },
+          "type": "Script"
+        },
+        {
+          "event": "response",
+          "id": "49592.34",
+          "url": "http://localhost:5080/browser-lab.js",
+          "status": 200,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "ETag": "\"1dd696e728ace3e\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "1854",
+            "Date": "Sat, 31 Oct 2026 19:33:57 GMT",
+            "Content-Type": "text/javascript",
+            "Last-Modified": "Sat, 31 Oct 2026 19:31:38 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "request",
+          "id": "49592.38",
+          "method": "GET",
+          "url": "http://localhost:4173/x.png",
+          "headers": {
+            "Referer": ""
+          },
+          "type": "Image"
+        },
+        {
+          "event": "failed",
+          "id": "49592.38",
+          "error": "",
+          "blockedReason": "csp"
+        }
+      ]
+    }
+  ],
+  "cors": [
+    {
+      "origin": "http://localhost:4173",
+      "case": "simple",
+      "readable": true,
+      "status": 200,
+      "body": "{\"status\":\"ready\"}",
+      "network": [
+        {
+          "event": "request",
+          "id": "41696.4",
+          "method": "GET",
+          "url": "http://localhost:4173/favicon.ico",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "http://localhost:4173/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Other"
+        },
+        {
+          "event": "request",
+          "id": "41696.5",
+          "method": "GET",
+          "url": "http://localhost:5080/health",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "http://localhost:4173/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "response",
+          "id": "41696.4",
+          "url": "http://localhost:4173/favicon.ico",
+          "status": 404,
+          "headers": {
+            "Content-Length": "335",
+            "Date": "Sat, 31 Oct 2026 19:33:59 GMT",
+            "Content-Type": "text/html;charset=utf-8",
+            "Server": "SimpleHTTP/0.6 Python/3.12.14",
+            "Connection": "close"
+          },
+          "type": "Other"
+        },
+        {
+          "event": "response",
+          "id": "41696.5",
+          "url": "http://localhost:5080/health",
+          "status": 200,
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "Access-Control-Allow-Credentials": "true",
+            "Referrer-Policy": "no-referrer",
+            "X-Content-Type-Options": "nosniff",
+            "Access-Control-Allow-Origin": "http://localhost:4173",
+            "Date": "Sat, 31 Oct 2026 19:33:59 GMT",
+            "Content-Type": "application/json; charset=utf-8",
+            "Server": "Kestrel"
+          },
+          "type": "Fetch"
+        }
+      ]
+    },
+    {
+      "origin": "http://localhost:4173",
+      "case": "preflight",
+      "readable": true,
+      "status": 200,
+      "body": "{\"status\":\"ready\"}",
+      "network": [
+        {
+          "event": "request",
+          "id": "41696.6",
+          "method": "GET",
+          "url": "http://localhost:5080/health",
+          "headers": {
+            "X-Lab-Cors-Probe": "lab05",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "http://localhost:4173/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "request",
+          "id": "A104B1A1582E2AA15293FFBE1A7CC102",
+          "method": "OPTIONS",
+          "url": "http://localhost:5080/health",
+          "headers": {
+            "Accept": "*/*",
+            "Access-Control-Request-Headers": "x-lab-cors-probe",
+            "Access-Control-Request-Method": "GET",
+            "Origin": "http://localhost:4173",
+            "Sec-Fetch-Mode": "cors",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+          },
+          "type": "Other"
+        },
+        {
+          "event": "response",
+          "id": "A104B1A1582E2AA15293FFBE1A7CC102",
+          "url": "http://localhost:5080/health",
+          "status": 204,
+          "headers": {
+            "Access-Control-Allow-Credentials": "true",
+            "Access-Control-Allow-Headers": "X-Lab-Cors-Probe",
+            "Access-Control-Allow-Methods": "GET",
+            "Access-Control-Allow-Origin": "http://localhost:4173",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "Date": "Sat, 31 Oct 2026 19:33:59 GMT",
+            "Referrer-Policy": "no-referrer",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Preflight"
+        },
+        {
+          "event": "response",
+          "id": "41696.6",
+          "url": "http://localhost:5080/health",
+          "status": 200,
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "Access-Control-Allow-Credentials": "true",
+            "Referrer-Policy": "no-referrer",
+            "X-Content-Type-Options": "nosniff",
+            "Access-Control-Allow-Origin": "http://localhost:4173",
+            "Date": "Sat, 31 Oct 2026 19:33:59 GMT",
+            "Content-Type": "application/json; charset=utf-8",
+            "Server": "Kestrel"
+          },
+          "type": "Fetch"
+        }
+      ]
+    },
+    {
+      "origin": "http://localhost:4173",
+      "case": "cookie",
+      "readable": true,
+      "status": 200,
+      "body": "{\"userId\":\"10000000-0000-0000-0000-000000000003\",\"userName\":\"morgan\",\"role\":\"Analyst\"}",
+      "network": [
+        {
+          "event": "request",
+          "id": "41696.7",
+          "method": "GET",
+          "url": "http://localhost:5080/api/me",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "http://localhost:4173/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "response",
+          "id": "41696.7",
+          "url": "http://localhost:5080/api/me",
+          "status": 200,
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "Access-Control-Allow-Credentials": "true",
+            "Referrer-Policy": "no-referrer",
+            "X-Content-Type-Options": "nosniff",
+            "Access-Control-Allow-Origin": "http://localhost:4173",
+            "Date": "Sat, 31 Oct 2026 19:33:59 GMT",
+            "Content-Type": "application/json; charset=utf-8",
+            "Server": "Kestrel"
+          },
+          "type": "Fetch"
+        }
+      ]
+    },
+    {
+      "origin": "http://localhost:4173",
+      "case": "anonymous",
+      "readable": true,
+      "status": 401,
+      "body": "{\"type\":\"https://tools.ietf.org/html/rfc9110#section-15.5.2\",\"title\":\"Unauthorized\",\"status\":401,\"traceId\":\"00-cd98a7532f733c26815ebb1e438ac335-3d9f0f15e2906bb9-00\"}",
+      "network": [
+        {
+          "event": "request",
+          "id": "41696.8",
+          "method": "GET",
+          "url": "http://localhost:5080/api/me",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "http://localhost:4173/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "response",
+          "id": "41696.8",
+          "url": "http://localhost:5080/api/me",
+          "status": 401,
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "Access-Control-Allow-Credentials": "true",
+            "Referrer-Policy": "no-referrer",
+            "X-Content-Type-Options": "nosniff",
+            "Access-Control-Allow-Origin": "http://localhost:4173",
+            "Date": "Sat, 31 Oct 2026 19:33:59 GMT",
+            "Content-Type": "application/problem+json",
+            "Server": "Kestrel"
+          },
+          "type": "Fetch"
+        }
+      ]
+    },
+    {
+      "origin": "http://localhost:4174",
+      "case": "simple",
+      "readable": false,
+      "error": "TypeError",
+      "network": [
+        {
+          "event": "request",
+          "id": "11672.4",
+          "method": "GET",
+          "url": "http://localhost:4174/favicon.ico",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "http://localhost:4174/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Other"
+        },
+        {
+          "event": "request",
+          "id": "11672.5",
+          "method": "GET",
+          "url": "http://localhost:5080/health",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "http://localhost:4174/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "response",
+          "id": "11672.4",
+          "url": "http://localhost:4174/favicon.ico",
+          "status": 404,
+          "headers": {
+            "Content-Length": "335",
+            "Date": "Sat, 31 Oct 2026 19:34:00 GMT",
+            "Content-Type": "text/html;charset=utf-8",
+            "Server": "SimpleHTTP/0.6 Python/3.12.14",
+            "Connection": "close"
+          },
+          "type": "Other"
+        },
+        {
+          "event": "failed",
+          "id": "11672.5",
+          "error": "net::ERR_FAILED",
+          "corsErrorStatus": {
+            "corsError": "MissingAllowOriginHeader",
+            "failedParameter": ""
+          }
+        }
+      ]
+    },
+    {
+      "origin": "http://localhost:4174",
+      "case": "preflight",
+      "readable": false,
+      "error": "TypeError",
+      "network": [
+        {
+          "event": "request",
+          "id": "11672.6",
+          "method": "GET",
+          "url": "http://localhost:5080/health",
+          "headers": {
+            "X-Lab-Cors-Probe": "lab05",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "http://localhost:4174/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "request",
+          "id": "9D9D13CAF9E4D371CA60F6603CD60902",
+          "method": "OPTIONS",
+          "url": "http://localhost:5080/health",
+          "headers": {
+            "Accept": "*/*",
+            "Access-Control-Request-Headers": "x-lab-cors-probe",
+            "Access-Control-Request-Method": "GET",
+            "Origin": "http://localhost:4174",
+            "Sec-Fetch-Mode": "cors",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+          },
+          "type": "Other"
+        },
+        {
+          "event": "response",
+          "id": "9D9D13CAF9E4D371CA60F6603CD60902",
+          "url": "http://localhost:5080/health",
+          "status": 204,
+          "headers": {
+            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "Date": "Sat, 31 Oct 2026 19:34:00 GMT",
+            "Referrer-Policy": "no-referrer",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Preflight"
+        },
+        {
+          "event": "failed",
+          "id": "11672.6",
+          "error": "net::ERR_FAILED",
+          "corsErrorStatus": {
+            "corsError": "PreflightMissingAllowOriginHeader",
+            "failedParameter": ""
+          }
+        }
+      ]
+    },
+    {
+      "origin": "http://localhost:4174",
+      "case": "cookie",
+      "readable": false,
+      "error": "TypeError",
+      "network": [
+        {
+          "event": "request",
+          "id": "11672.7",
+          "method": "GET",
+          "url": "http://localhost:5080/api/me",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "http://localhost:4174/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "failed",
+          "id": "11672.7",
+          "error": "net::ERR_FAILED",
+          "corsErrorStatus": {
+            "corsError": "MissingAllowOriginHeader",
+            "failedParameter": ""
+          }
+        }
+      ]
+    },
+    {
+      "origin": "http://localhost:4174",
+      "case": "anonymous",
+      "readable": false,
+      "error": "TypeError",
+      "network": [
+        {
+          "event": "request",
+          "id": "11672.8",
+          "method": "GET",
+          "url": "http://localhost:5080/api/me",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "http://localhost:4174/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "failed",
+          "id": "11672.8",
+          "error": "net::ERR_FAILED",
+          "corsErrorStatus": {
+            "corsError": "MissingAllowOriginHeader",
+            "failedParameter": ""
+          }
+        }
+      ]
+    },
+    {
+      "origin": "http://localhost:4173",
+      "case": "private-context-include",
+      "readable": true,
+      "status": 401
+    }
+  ],
+  "headers": [
+    {
+      "url": "/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "content-length": "2792",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+        "content-type": "text/html",
+        "date": "Sat, 31 Oct 2026 19:34:01 GMT",
+        "etag": "\"1dd60b76160d9e8\"",
+        "last-modified": "Tue, 20 Oct 2026 17:21:02 GMT",
+        "referrer-policy": "no-referrer",
+        "server": "Kestrel",
+        "x-content-type-options": "nosniff"
+      }
+    },
+    {
+      "url": "/auth-lab.html",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "content-length": "3668",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+        "content-type": "text/html",
+        "date": "Sat, 31 Oct 2026 19:34:01 GMT",
+        "etag": "\"1dd5bfcf3bb21d4\"",
+        "last-modified": "Wed, 14 Oct 2026 16:56:27 GMT",
+        "referrer-policy": "no-referrer",
+        "server": "Kestrel",
+        "x-content-type-options": "nosniff"
+      }
+    },
+    {
+      "url": "/browser-lab.html",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "content-length": "1696",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+        "content-type": "text/html",
+        "date": "Sat, 31 Oct 2026 19:33:57 GMT",
+        "etag": "\"1dd696e728acfa0\"",
+        "last-modified": "Sat, 31 Oct 2026 19:31:38 GMT",
+        "referrer-policy": "no-referrer",
+        "server": "Kestrel",
+        "x-content-type-options": "nosniff"
+      }
+    }
+  ],
+  "csp": [
+    {
+      "directive": "img-src",
+      "blockedURI": "http://localhost:4173/x.png",
+      "disposition": "enforce",
+      "console": [
+        "Loading the image 'http://localhost:4173/x.png' violates the following Content Security Policy directive: \"img-src 'self'\". The action has been blocked."
+      ]
+    }
+  ],
+  "cookieMetadata": [
+    {
+      "name": ".AspNetCore.Identity.Application",
+      "domain": "localhost",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ]
+}

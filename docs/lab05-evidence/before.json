@@ -1,0 +1,881 @@
+{
+  "mode": "before",
+  "browser": "156.0.8078.49",
+  "timestamp": "2026-10-31T19:27:28.443Z",
+  "xss": [
+    {
+      "user": "morgan",
+      "id": "672816db-e333-410a-9834-dd0a68ab8d3b",
+      "field": "description",
+      "status": "GET: 200",
+      "description": "",
+      "descriptionHtml": "<img src=\"x\" onerror=\"document.querySelector('#lab05-marker-target').setAttribute('data-lab05-marker','executed')\">",
+      "comments": "",
+      "commentHtml": "",
+      "images": 1,
+      "marker": "executed",
+      "network": [
+        {
+          "event": "request",
+          "id": "C6C5803A05DA8C20A7ADD635DCD10175",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.html",
+          "headers": {
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "type": "Document"
+        },
+        {
+          "event": "response",
+          "id": "C6C5803A05DA8C20A7ADD635DCD10175",
+          "url": "http://localhost:5080/browser-lab.html",
+          "status": 200,
+          "headers": {
+            "Accept-Ranges": "bytes",
+            "Content-Length": "823",
+            "Content-Type": "text/html",
+            "Date": "Sat, 31 Oct 2026 19:27:29 GMT",
+            "ETag": "\"1dd696d96014737\"",
+            "Last-Modified": "Sat, 31 Oct 2026 19:25:28 GMT",
+            "Referrer-Policy": "no-referrer",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Document"
+        },
+        {
+          "event": "request",
+          "id": "13728.2",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.js",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "response",
+          "id": "13728.2",
+          "url": "http://localhost:5080/browser-lab.js",
+          "status": 200,
+          "headers": {
+            "ETag": "\"1dd696d960141f7\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "1527",
+            "Date": "Sat, 31 Oct 2026 19:27:29 GMT",
+            "Content-Type": "text/javascript",
+            "Last-Modified": "Sat, 31 Oct 2026 19:25:28 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "request",
+          "id": "13728.4",
+          "method": "GET",
+          "url": "http://localhost:5080/api/incidents/672816db-e333-410a-9834-dd0a68ab8d3b",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "response",
+          "id": "13728.4",
+          "url": "http://localhost:5080/api/incidents/672816db-e333-410a-9834-dd0a68ab8d3b",
+          "status": 200,
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Referrer-Policy": "no-referrer",
+            "Date": "Sat, 31 Oct 2026 19:27:29 GMT",
+            "Content-Type": "application/json; charset=utf-8",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "request",
+          "id": "13728.5",
+          "method": "GET",
+          "url": "http://localhost:5080/x",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Image"
+        },
+        {
+          "event": "response",
+          "id": "13728.5",
+          "url": "http://localhost:5080/x",
+          "status": 200,
+          "headers": {
+            "ETag": "\"1dd60b76160d9e8\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "2792",
+            "Date": "Sat, 31 Oct 2026 19:27:29 GMT",
+            "Content-Type": "text/html",
+            "Last-Modified": "Tue, 20 Oct 2026 17:21:02 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Image"
+        },
+        {
+          "event": "request",
+          "id": "76B0D08758AE1B517FAD3230C9EBD973",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.html",
+          "headers": {
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "type": "Document"
+        },
+        {
+          "event": "response",
+          "id": "76B0D08758AE1B517FAD3230C9EBD973",
+          "url": "http://localhost:5080/browser-lab.html",
+          "status": 200,
+          "headers": {
+            "Accept-Ranges": "bytes",
+            "Content-Length": "823",
+            "Content-Type": "text/html",
+            "Date": "Sat, 31 Oct 2026 19:27:29 GMT",
+            "ETag": "\"1dd696d96014737\"",
+            "Last-Modified": "Sat, 31 Oct 2026 19:25:28 GMT",
+            "Referrer-Policy": "no-referrer",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Document"
+        },
+        {
+          "event": "request",
+          "id": "13728.7",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.js",
+          "headers": {
+            "Referer": ""
+          },
+          "type": "Script"
+        },
+        {
+          "event": "response",
+          "id": "13728.7",
+          "url": "http://localhost:5080/browser-lab.js",
+          "status": 200,
+          "headers": {
+            "ETag": "\"1dd696d960141f7\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "1527",
+            "Date": "Sat, 31 Oct 2026 19:27:29 GMT",
+            "Content-Type": "text/javascript",
+            "Last-Modified": "Sat, 31 Oct 2026 19:25:28 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "request",
+          "id": "13728.9",
+          "method": "GET",
+          "url": "http://localhost:5080/api/incidents/20000000-0000-0000-0000-000000000001",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "response",
+          "id": "13728.9",
+          "url": "http://localhost:5080/api/incidents/20000000-0000-0000-0000-000000000001",
+          "status": 200,
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Referrer-Policy": "no-referrer",
+            "Date": "Sat, 31 Oct 2026 19:27:30 GMT",
+            "Content-Type": "application/json; charset=utf-8",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "request",
+          "id": "13728.10",
+          "method": "GET",
+          "url": "http://localhost:5080/x",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Image"
+        },
+        {
+          "event": "response",
+          "id": "13728.10",
+          "url": "http://localhost:5080/x",
+          "status": 200,
+          "headers": {
+            "ETag": "\"1dd60b76160d9e8\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "2792",
+            "Date": "Sat, 31 Oct 2026 19:27:29 GMT",
+            "Content-Type": "text/html",
+            "Last-Modified": "Tue, 20 Oct 2026 17:21:02 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Image"
+        }
+      ]
+    },
+    {
+      "user": "bob",
+      "id": "672816db-e333-410a-9834-dd0a68ab8d3b",
+      "field": "description",
+      "status": "GET: 403",
+      "description": "",
+      "descriptionHtml": "",
+      "comments": "",
+      "commentHtml": "",
+      "images": 0,
+      "marker": null,
+      "network": [
+        {
+          "event": "request",
+          "id": "FAF5CBBE497A0C5EDCFD8AD4AD8291B5",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.html",
+          "headers": {
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "type": "Document"
+        },
+        {
+          "event": "response",
+          "id": "FAF5CBBE497A0C5EDCFD8AD4AD8291B5",
+          "url": "http://localhost:5080/browser-lab.html",
+          "status": 200,
+          "headers": {
+            "Accept-Ranges": "bytes",
+            "Content-Length": "823",
+            "Content-Type": "text/html",
+            "Date": "Sat, 31 Oct 2026 19:27:29 GMT",
+            "ETag": "\"1dd696d96014737\"",
+            "Last-Modified": "Sat, 31 Oct 2026 19:25:28 GMT",
+            "Referrer-Policy": "no-referrer",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Document"
+        },
+        {
+          "event": "request",
+          "id": "38636.2",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.js",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "response",
+          "id": "38636.2",
+          "url": "http://localhost:5080/browser-lab.js",
+          "status": 200,
+          "headers": {
+            "ETag": "\"1dd696d960141f7\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "1527",
+            "Date": "Sat, 31 Oct 2026 19:27:29 GMT",
+            "Content-Type": "text/javascript",
+            "Last-Modified": "Sat, 31 Oct 2026 19:25:28 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "request",
+          "id": "38636.4",
+          "method": "GET",
+          "url": "http://localhost:5080/api/incidents/672816db-e333-410a-9834-dd0a68ab8d3b",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "response",
+          "id": "38636.4",
+          "url": "http://localhost:5080/api/incidents/672816db-e333-410a-9834-dd0a68ab8d3b",
+          "status": 403,
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Referrer-Policy": "no-referrer",
+            "Date": "Sat, 31 Oct 2026 19:27:30 GMT",
+            "Content-Type": "application/problem+json",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Fetch"
+        }
+      ]
+    },
+    {
+      "user": "morgan",
+      "id": "20000000-0000-0000-0000-000000000001",
+      "field": "comment",
+      "status": "GET: 200",
+      "description": "Одержано лист нібито від деканату. Вкладення не відкривалося.",
+      "descriptionHtml": "Одержано лист нібито від деканату. Вкладення не відкривалося.",
+      "comments": "Заголовки листа передано аналітику.Внутрішня примітка аналітика про перевірку вкладення.",
+      "commentHtml": "<p>Заголовки листа передано аналітику.</p><p><img src=\"x\" onerror=\"document.querySelector('#lab05-marker-target').setAttribute('data-lab05-marker','executed')\"></p><p>Внутрішня примітка аналітика про перевірку вкладення.</p>",
+      "images": 1,
+      "marker": "executed",
+      "network": [
+        {
+          "event": "request",
+          "id": "76B0D08758AE1B517FAD3230C9EBD973",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.html",
+          "headers": {
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "type": "Document"
+        },
+        {
+          "event": "response",
+          "id": "76B0D08758AE1B517FAD3230C9EBD973",
+          "url": "http://localhost:5080/browser-lab.html",
+          "status": 200,
+          "headers": {
+            "Accept-Ranges": "bytes",
+            "Content-Length": "823",
+            "Content-Type": "text/html",
+            "Date": "Sat, 31 Oct 2026 19:27:29 GMT",
+            "ETag": "\"1dd696d96014737\"",
+            "Last-Modified": "Sat, 31 Oct 2026 19:25:28 GMT",
+            "Referrer-Policy": "no-referrer",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Document"
+        },
+        {
+          "event": "request",
+          "id": "13728.7",
+          "method": "GET",
+          "url": "http://localhost:5080/browser-lab.js",
+          "headers": {
+            "Referer": ""
+          },
+          "type": "Script"
+        },
+        {
+          "event": "response",
+          "id": "13728.7",
+          "url": "http://localhost:5080/browser-lab.js",
+          "status": 200,
+          "headers": {
+            "ETag": "\"1dd696d960141f7\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "1527",
+            "Date": "Sat, 31 Oct 2026 19:27:29 GMT",
+            "Content-Type": "text/javascript",
+            "Last-Modified": "Sat, 31 Oct 2026 19:25:28 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Script"
+        },
+        {
+          "event": "request",
+          "id": "13728.9",
+          "method": "GET",
+          "url": "http://localhost:5080/api/incidents/20000000-0000-0000-0000-000000000001",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "response",
+          "id": "13728.9",
+          "url": "http://localhost:5080/api/incidents/20000000-0000-0000-0000-000000000001",
+          "status": 200,
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Referrer-Policy": "no-referrer",
+            "Date": "Sat, 31 Oct 2026 19:27:30 GMT",
+            "Content-Type": "application/json; charset=utf-8",
+            "Server": "Kestrel",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "request",
+          "id": "13728.10",
+          "method": "GET",
+          "url": "http://localhost:5080/x",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Image"
+        },
+        {
+          "event": "response",
+          "id": "13728.10",
+          "url": "http://localhost:5080/x",
+          "status": 200,
+          "headers": {
+            "ETag": "\"1dd60b76160d9e8\"",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "2792",
+            "Date": "Sat, 31 Oct 2026 19:27:29 GMT",
+            "Content-Type": "text/html",
+            "Last-Modified": "Tue, 20 Oct 2026 17:21:02 GMT",
+            "Server": "Kestrel"
+          },
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "cors": [
+    {
+      "origin": "http://localhost:4173",
+      "case": "simple",
+      "readable": false,
+      "error": "TypeError",
+      "network": [
+        {
+          "event": "request",
+          "id": "44336.4",
+          "method": "GET",
+          "url": "http://localhost:4173/favicon.ico",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "http://localhost:4173/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Other"
+        },
+        {
+          "event": "request",
+          "id": "44336.5",
+          "method": "GET",
+          "url": "http://localhost:5080/health",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "http://localhost:4173/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "response",
+          "id": "44336.4",
+          "url": "http://localhost:4173/favicon.ico",
+          "status": 404,
+          "headers": {
+            "Content-Length": "335",
+            "Date": "Sat, 31 Oct 2026 19:27:30 GMT",
+            "Content-Type": "text/html;charset=utf-8",
+            "Server": "SimpleHTTP/0.6 Python/3.12.14",
+            "Connection": "close"
+          },
+          "type": "Other"
+        },
+        {
+          "event": "failed",
+          "id": "44336.5",
+          "error": "net::ERR_FAILED",
+          "corsErrorStatus": {
+            "corsError": "MissingAllowOriginHeader",
+            "failedParameter": ""
+          }
+        }
+      ]
+    },
+    {
+      "origin": "http://localhost:4173",
+      "case": "preflight",
+      "readable": false,
+      "error": "TypeError",
+      "network": [
+        {
+          "event": "request",
+          "id": "44336.6",
+          "method": "GET",
+          "url": "http://localhost:5080/health",
+          "headers": {
+            "X-Lab-Cors-Probe": "lab05",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "http://localhost:4173/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "request",
+          "id": "0E6DDD0353D47FEDDC8864F5290A8E6E",
+          "method": "OPTIONS",
+          "url": "http://localhost:5080/health",
+          "headers": {
+            "Accept": "*/*",
+            "Access-Control-Request-Headers": "x-lab-cors-probe",
+            "Access-Control-Request-Method": "GET",
+            "Origin": "http://localhost:4173",
+            "Sec-Fetch-Mode": "cors",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+          },
+          "type": "Other"
+        },
+        {
+          "event": "response",
+          "id": "0E6DDD0353D47FEDDC8864F5290A8E6E",
+          "url": "http://localhost:5080/health",
+          "status": 405,
+          "headers": {
+            "Allow": "GET, HEAD",
+            "Content-Type": "application/problem+json",
+            "Date": "Sat, 31 Oct 2026 19:27:30 GMT",
+            "Referrer-Policy": "no-referrer",
+            "Server": "Kestrel",
+            "Transfer-Encoding": "chunked",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Preflight"
+        },
+        {
+          "event": "failed",
+          "id": "44336.6",
+          "error": "net::ERR_FAILED",
+          "corsErrorStatus": {
+            "corsError": "PreflightMissingAllowOriginHeader",
+            "failedParameter": ""
+          }
+        }
+      ]
+    },
+    {
+      "origin": "http://localhost:4173",
+      "case": "cookie",
+      "readable": false,
+      "error": "TypeError",
+      "network": [
+        {
+          "event": "request",
+          "id": "44336.7",
+          "method": "GET",
+          "url": "http://localhost:5080/api/me",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "http://localhost:4173/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "failed",
+          "id": "44336.7",
+          "error": "net::ERR_FAILED",
+          "corsErrorStatus": {
+            "corsError": "MissingAllowOriginHeader",
+            "failedParameter": ""
+          }
+        }
+      ]
+    },
+    {
+      "origin": "http://localhost:4173",
+      "case": "anonymous",
+      "readable": false,
+      "error": "TypeError",
+      "network": [
+        {
+          "event": "request",
+          "id": "44336.8",
+          "method": "GET",
+          "url": "http://localhost:5080/api/me",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "http://localhost:4173/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "failed",
+          "id": "44336.8",
+          "error": "net::ERR_FAILED",
+          "corsErrorStatus": {
+            "corsError": "MissingAllowOriginHeader",
+            "failedParameter": ""
+          }
+        }
+      ]
+    },
+    {
+      "origin": "http://localhost:4174",
+      "case": "simple",
+      "readable": false,
+      "error": "TypeError",
+      "network": [
+        {
+          "event": "request",
+          "id": "15040.4",
+          "method": "GET",
+          "url": "http://localhost:4174/favicon.ico",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "http://localhost:4174/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Other"
+        },
+        {
+          "event": "request",
+          "id": "15040.5",
+          "method": "GET",
+          "url": "http://localhost:5080/health",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "http://localhost:4174/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "response",
+          "id": "15040.4",
+          "url": "http://localhost:4174/favicon.ico",
+          "status": 404,
+          "headers": {
+            "Content-Length": "335",
+            "Date": "Sat, 31 Oct 2026 19:27:31 GMT",
+            "Content-Type": "text/html;charset=utf-8",
+            "Server": "SimpleHTTP/0.6 Python/3.12.14",
+            "Connection": "close"
+          },
+          "type": "Other"
+        },
+        {
+          "event": "failed",
+          "id": "15040.5",
+          "error": "net::ERR_FAILED",
+          "corsErrorStatus": {
+            "corsError": "MissingAllowOriginHeader",
+            "failedParameter": ""
+          }
+        }
+      ]
+    },
+    {
+      "origin": "http://localhost:4174",
+      "case": "preflight",
+      "readable": false,
+      "error": "TypeError",
+      "network": [
+        {
+          "event": "request",
+          "id": "15040.6",
+          "method": "GET",
+          "url": "http://localhost:5080/health",
+          "headers": {
+            "X-Lab-Cors-Probe": "lab05",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "http://localhost:4174/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "request",
+          "id": "2B3812D098BCB6D6DD8A2C9AFBAED2B4",
+          "method": "OPTIONS",
+          "url": "http://localhost:5080/health",
+          "headers": {
+            "Accept": "*/*",
+            "Access-Control-Request-Headers": "x-lab-cors-probe",
+            "Access-Control-Request-Method": "GET",
+            "Origin": "http://localhost:4174",
+            "Sec-Fetch-Mode": "cors",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+          },
+          "type": "Other"
+        },
+        {
+          "event": "response",
+          "id": "2B3812D098BCB6D6DD8A2C9AFBAED2B4",
+          "url": "http://localhost:5080/health",
+          "status": 405,
+          "headers": {
+            "Allow": "GET, HEAD",
+            "Content-Type": "application/problem+json",
+            "Date": "Sat, 31 Oct 2026 19:27:31 GMT",
+            "Referrer-Policy": "no-referrer",
+            "Server": "Kestrel",
+            "Transfer-Encoding": "chunked",
+            "X-Content-Type-Options": "nosniff"
+          },
+          "type": "Preflight"
+        },
+        {
+          "event": "failed",
+          "id": "15040.6",
+          "error": "net::ERR_FAILED",
+          "corsErrorStatus": {
+            "corsError": "PreflightMissingAllowOriginHeader",
+            "failedParameter": ""
+          }
+        }
+      ]
+    },
+    {
+      "origin": "http://localhost:4174",
+      "case": "cookie",
+      "readable": false,
+      "error": "TypeError",
+      "network": [
+        {
+          "event": "request",
+          "id": "15040.7",
+          "method": "GET",
+          "url": "http://localhost:5080/api/me",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "http://localhost:4174/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "failed",
+          "id": "15040.7",
+          "error": "net::ERR_FAILED",
+          "corsErrorStatus": {
+            "corsError": "MissingAllowOriginHeader",
+            "failedParameter": ""
+          }
+        }
+      ]
+    },
+    {
+      "origin": "http://localhost:4174",
+      "case": "anonymous",
+      "readable": false,
+      "error": "TypeError",
+      "network": [
+        {
+          "event": "request",
+          "id": "15040.8",
+          "method": "GET",
+          "url": "http://localhost:5080/api/me",
+          "headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "Referer": "http://localhost:4174/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "type": "Fetch"
+        },
+        {
+          "event": "failed",
+          "id": "15040.8",
+          "error": "net::ERR_FAILED",
+          "corsErrorStatus": {
+            "corsError": "MissingAllowOriginHeader",
+            "failedParameter": ""
+          }
+        }
+      ]
+    }
+  ],
+  "headers": [],
+  "csp": []
+}
