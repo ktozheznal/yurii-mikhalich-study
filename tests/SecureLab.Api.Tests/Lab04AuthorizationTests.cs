@@ -248,6 +248,7 @@ public sealed class Lab04AuthorizationTests(
         using var alice = host.CreateClient();
         using var login = await alice.PostAsJsonAsync("/api/auth/login", new { userName = "alice", password = CookieClient.SeedPassword });
         Assert.Equal(HttpStatusCode.NoContent, login.StatusCode);
+        await alice.UseAntiforgeryTokenAsync();
         using var response = await alice.PostAsJsonAsync(PathFor(DbSeeder.SafeTextIncidentId) + "/triage", new { token = "do-not-log-this-body" });
         Assert.Equal(HttpStatusCode.Forbidden, response.StatusCode);
         using var json = JsonDocument.Parse(await response.Content.ReadAsStringAsync());

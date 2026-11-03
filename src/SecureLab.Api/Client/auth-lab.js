@@ -14,7 +14,7 @@ function clearSession(message) {
 }
 
 async function request(path, body) {
-  const response = await fetch(path, {
+  const response = await SecureLabCsrf.fetch(path, {
     method: body === undefined ? "GET" : "POST",
     credentials: "same-origin",
     headers: { Accept: "application/json", ...(body === undefined ? {} : { "Content-Type": "application/json" }) },

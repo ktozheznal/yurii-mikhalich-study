@@ -24,6 +24,7 @@ public sealed class Lab02ContractTests(SecureLabApiFactory factory)
         using var login = await _client.PostAsJsonAsync("/api/auth/login",
             new { userName = "alice", password = CookieClient.SeedPassword });
         Assert.Equal(HttpStatusCode.NoContent, login.StatusCode);
+        await _client.UseAntiforgeryTokenAsync();
     }
 
     public Task DisposeAsync()

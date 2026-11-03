@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using SecureLab.Api.Application.Incidents;
 using SecureLab.Api.Data;
 using SecureLab.Api.Data.Entities;
+using SecureLab.Api.Scaffolding;
 
 namespace SecureLab.Api.Presentation.Endpoints;
 
@@ -31,7 +32,7 @@ public static class IncidentMutationEndpoints
             incident.UpdatedAtUtc = DateTimeOffset.UtcNow;
             await db.SaveChangesAsync(ct);
             return Results.NoContent();
-        });
+        }).RequireCookieAntiforgery();
         group.MapDelete("/{id:guid}", async (Guid id, IncidentAccess access,
             SecureLabDbContext db, CancellationToken ct) =>
         {
@@ -41,9 +42,10 @@ public static class IncidentMutationEndpoints
             db.Incidents.Remove(incident);
             await db.SaveChangesAsync(ct);
             return Results.NoContent();
-        });
+        }).RequireCookieAntiforgery();
         group.MapPost("/{id:guid}/triage", async (Guid id, IncidentAccess access,
-            SecureLabDbContext db, CancellationToken ct) =>
+            SecureLabDbContext db, HttpContext context,
+            ILogger<IncidentAccess> logger, CancellationToken ct) =>
         {
             var incident = await db.Incidents.SingleOrDefaultAsync(item => item.Id == id, ct);
             if (incident is null) return Missing();
@@ -58,8 +60,11 @@ public static class IncidentMutationEndpoints
                 Note = "Первинну оцінку завершено.", CreatedAtUtc = now
             });
             await db.SaveChangesAsync(ct);
+            logger.LogInformation("incident.status.changed subject={Subject} action={Action} resource={Resource} old={OldStatus} new={NewStatus} result=allow utc={Utc} traceId={TraceId}",
+                access.UserId, "triage", id, IncidentStatus.New, IncidentStatus.Triaged,
+                now.ToString("O"), System.Diagnostics.Activity.Current?.Id ?? context.TraceIdentifier);
             return Results.Ok(new { incident.Id, status = incident.Status.ToString() });
-        });
+        }).RequireCookieAntiforgery();
         app.MapGet("/api/incident-comments/{id:guid}", async (Guid id, IncidentAccess access,
             SecureLabDbContext db, CancellationToken ct) =>
         {

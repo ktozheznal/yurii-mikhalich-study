@@ -49,6 +49,7 @@ public sealed class Lab03RateLimitAndEventsTests : IDisposable
         var password = CookieClient.SeedPassword;
         using var success = await client.PostAsJsonAsync("/api/auth/login", new { userName = "alice", password });
         Assert.Equal(HttpStatusCode.NoContent, success.StatusCode);
+        await client.UseAntiforgeryTokenAsync();
         using var logout = await client.PostAsync("/api/auth/logout", null);
         Assert.Equal(HttpStatusCode.NoContent, logout.StatusCode);
         var unverifiedName = "unknown-" + Guid.NewGuid().ToString("N");

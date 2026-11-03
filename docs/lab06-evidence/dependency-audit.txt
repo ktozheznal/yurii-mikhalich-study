@@ -1,0 +1,19 @@
+DEPENDENCY AUDIT 2026-11-03
+SDK10.0.303
+Profile: local Windows / Release solution / current uncommitted working tree
+
+COMMAND: dotnet restore SecureLab.sln --locked-mode --nologo
+  Determining projects to restore...
+  Restored C:\Users\30119\ktozheznal-study\yurii-mikhalich-study\tests\SecureLab.Api.Tests\SecureLab.Api.Tests.csproj (in 275 ms).
+  Restored C:\Users\30119\ktozheznal-study\yurii-mikhalich-study\src\SecureLab.Api\SecureLab.Api.csproj (in 295 ms).
+Exit code: 0
+
+COMMAND: dotnet package list --project SecureLab.sln --vulnerable --include-transitive --no-restore
+EXIT CODE:0
+The following sources were used:
+   https://api.nuget.org/v3/index.json
+
+The given project SecureLab.Api has no vulnerable packages given the current sources.
+The given project SecureLab.Api.Tests has no vulnerable packages given the current sources.
+
+Interpretation: no known package advisory reported for direct/transitive closure at audit time. This is not proof of absence of all vulnerabilities. No packages updated/suppressed.

@@ -1,0 +1,4 @@
+  Determining projects to restore...
+  Restored C:\Users\30119\ktozheznal-study\yurii-mikhalich-study\tests\SecureLab.Api.Tests\SecureLab.Api.Tests.csproj (in 275 ms).
+  Restored C:\Users\30119\ktozheznal-study\yurii-mikhalich-study\src\SecureLab.Api\SecureLab.Api.csproj (in 295 ms).
+Exit code: 0

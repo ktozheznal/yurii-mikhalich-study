@@ -1,0 +1,110 @@
+{
+  "mode": "before",
+  "date": "2026-11-03T18:17:49.403Z",
+  "client": "Chromium local HTTP browser + APIRequestContext",
+  "checks": [
+    {
+      "id": "REG-CSRF-01",
+      "route": "PUT /api/incidents/{id}",
+      "resourceId": "890ebf6a-50d7-4d99-9238-cb06f75edc1f",
+      "missingTokenStatus": 204,
+      "before": "Початковий навчальний опис",
+      "afterRejected": "Зміна без CSRF токена",
+      "stateUnchanged": false
+    },
+    {
+      "id": "REG-HEADERS-500",
+      "status": 500,
+      "headersPresent": false,
+      "traceId": "00-b444de68d1b3295e9b19d04d63965977-51c3278946df84ae-00",
+      "body": {
+        "type": "https://tools.ietf.org/html/rfc9110#section-15.6.1",
+        "title": "An error occurred while processing your request.",
+        "status": 500,
+        "traceId": "00-b444de68d1b3295e9b19d04d63965977-51c3278946df84ae-00"
+      }
+    }
+  ],
+  "headers": [
+    {
+      "profile": "Development",
+      "route": "/",
+      "status": 200,
+      "headers": {
+        "content-length": "2792",
+        "content-type": "text/html",
+        "date": "Tue, 03 Nov 2026 18:17:49 GMT",
+        "server": "Kestrel",
+        "accept-ranges": "bytes",
+        "etag": "\"1dd60b76160d9e8\"",
+        "last-modified": "Tue, 20 Oct 2026 17:21:02 GMT",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
+      }
+    },
+    {
+      "profile": "Development",
+      "route": "/api/incidents/20000000-0000-0000-0000-000000000001",
+      "status": 200,
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 03 Nov 2026 18:17:49 GMT",
+        "server": "Kestrel",
+        "transfer-encoding": "chunked",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
+      }
+    },
+    {
+      "profile": "Development",
+      "route": "/api/incidents?status=Unknown",
+      "status": 400,
+      "headers": {
+        "content-type": "application/problem+json",
+        "date": "Tue, 03 Nov 2026 18:17:49 GMT",
+        "server": "Kestrel",
+        "transfer-encoding": "chunked",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
+      }
+    },
+    {
+      "profile": "Development",
+      "route": "/api/incidents/99999999-9999-9999-9999-999999999999",
+      "status": 404,
+      "headers": {
+        "content-type": "application/problem+json",
+        "date": "Tue, 03 Nov 2026 18:17:49 GMT",
+        "server": "Kestrel",
+        "transfer-encoding": "chunked",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
+      }
+    },
+    {
+      "profile": "Production / no launch profile / unreachable local DB",
+      "route": "/api/auth/login",
+      "status": 500,
+      "headers": {
+        "content-type": "application/problem+json",
+        "date": "Tue, 03 Nov 2026 18:17:51 GMT",
+        "server": "Kestrel",
+        "cache-control": "no-cache,no-store",
+        "expires": "-1",
+        "pragma": "no-cache",
+        "transfer-encoding": "chunked"
+      },
+      "body": {
+        "type": "https://tools.ietf.org/html/rfc9110#section-15.6.1",
+        "title": "An error occurred while processing your request.",
+        "status": 500,
+        "traceId": "00-b444de68d1b3295e9b19d04d63965977-51c3278946df84ae-00"
+      }
+    }
+  ],
+  "cors": []
+}

@@ -21,6 +21,7 @@ public sealed class Lab02SearchTests(SecureLabApiFactory factory)
         _client = _host.CreateClient();
         using var login = await _client.PostAsJsonAsync("/api/auth/login", new { userName = "morgan", password = CookieClient.SeedPassword });
         Assert.Equal(HttpStatusCode.NoContent, login.StatusCode);
+        await _client.UseAntiforgeryTokenAsync();
     }
 
     public Task DisposeAsync()
@@ -69,6 +70,7 @@ public sealed class Lab02SearchTests(SecureLabApiFactory factory)
         using var login = await _client.PostAsJsonAsync("/api/auth/login",
             new { userName = "alice", password = CookieClient.SeedPassword });
         Assert.Equal(HttpStatusCode.NoContent, login.StatusCode);
+        await _client.UseAntiforgeryTokenAsync();
         var prefix = $"Literal-{Guid.NewGuid():N}-";
         var matchingTitle = prefix + character + "End";
         var controlTitle = prefix + "XEnd";

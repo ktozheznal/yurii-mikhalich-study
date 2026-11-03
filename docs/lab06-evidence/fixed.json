@@ -1,0 +1,228 @@
+{
+  "mode": "fixed",
+  "date": "2026-11-03T18:26:37.746Z",
+  "client": "Chromium local HTTP browser + APIRequestContext",
+  "checks": [
+    {
+      "id": "REG-CSRF-01",
+      "route": "PUT /api/incidents/{id}",
+      "resourceId": "efa4ad67-533a-4654-ab8b-28dd498349c4",
+      "missingTokenStatus": 400,
+      "before": "Початковий навчальний опис",
+      "afterRejected": "Початковий навчальний опис",
+      "stateUnchanged": true,
+      "invalidTokenStatus": 400,
+      "validTokenStatus": 204,
+      "afterValid": "Легітимна зміна з валідною парою CSRF"
+    },
+    {
+      "id": "REG-HEADERS-500",
+      "status": 500,
+      "headersPresent": true,
+      "traceId": "00-0b623ba5466570097cb98a3159ae1863-23d75641ef878742-00",
+      "body": {
+        "type": "https://tools.ietf.org/html/rfc9110#section-15.6.1",
+        "title": "An error occurred while processing your request.",
+        "status": 500,
+        "traceId": "00-0b623ba5466570097cb98a3159ae1863-23d75641ef878742-00"
+      }
+    },
+    {
+      "id": "REG-UI-F5",
+      "status": 201,
+      "literalText": true,
+      "htmlElements": 0
+    },
+    {
+      "id": "REG-UI-LOGOUT",
+      "status": 204,
+      "sessionAfter": 401
+    },
+    {
+      "id": "REG-XSS-01",
+      "profile": "Development Morgan",
+      "descriptionLiteral": "Одержано лист нібито від деканату. Вкладення не відкривалося.",
+      "commentsLiteral": "Заголовки листа передано аналітику.<img src=x onerror=\"document.querySelector('#lab05-marker-target').setAttribute('data-lab05-marker','executed')\">Внутрішня примітка аналітика про перевірку вкладення.",
+      "unsafeElements": 0,
+      "marker": null
+    }
+  ],
+  "headers": [
+    {
+      "profile": "Development",
+      "route": "/",
+      "status": 200,
+      "headers": {
+        "content-length": "2792",
+        "content-type": "text/html",
+        "date": "Tue, 03 Nov 2026 18:26:38 GMT",
+        "server": "Kestrel",
+        "accept-ranges": "bytes",
+        "etag": "\"1dd60b76160d9e8\"",
+        "last-modified": "Tue, 20 Oct 2026 17:21:02 GMT",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
+      }
+    },
+    {
+      "profile": "Development",
+      "route": "/api/incidents/20000000-0000-0000-0000-000000000001",
+      "status": 200,
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 03 Nov 2026 18:26:38 GMT",
+        "server": "Kestrel",
+        "transfer-encoding": "chunked",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
+      }
+    },
+    {
+      "profile": "Development",
+      "route": "/api/incidents?status=Unknown",
+      "status": 400,
+      "headers": {
+        "content-type": "application/problem+json",
+        "date": "Tue, 03 Nov 2026 18:26:38 GMT",
+        "server": "Kestrel",
+        "transfer-encoding": "chunked",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
+      }
+    },
+    {
+      "profile": "Development",
+      "route": "/api/incidents/99999999-9999-9999-9999-999999999999",
+      "status": 404,
+      "headers": {
+        "content-type": "application/problem+json",
+        "date": "Tue, 03 Nov 2026 18:26:38 GMT",
+        "server": "Kestrel",
+        "transfer-encoding": "chunked",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
+      }
+    },
+    {
+      "profile": "Production / no launch profile / unreachable local DB",
+      "route": "/api/auth/login",
+      "status": 500,
+      "headers": {
+        "content-type": "application/problem+json",
+        "date": "Tue, 03 Nov 2026 18:26:38 GMT",
+        "server": "Kestrel",
+        "cache-control": "no-cache,no-store",
+        "expires": "-1",
+        "pragma": "no-cache",
+        "transfer-encoding": "chunked",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
+      },
+      "body": {
+        "type": "https://tools.ietf.org/html/rfc9110#section-15.6.1",
+        "title": "An error occurred while processing your request.",
+        "status": 500,
+        "traceId": "00-0b623ba5466570097cb98a3159ae1863-23d75641ef878742-00"
+      }
+    }
+  ],
+  "cors": [
+    {
+      "id": "REG-CORS-01",
+      "origin": "http://localhost:4173",
+      "readable": true,
+      "status": 200,
+      "network": [
+        {
+          "console": "Failed to load resource: the server responded with a status of 404 (File not found)"
+        },
+        {
+          "url": "http://localhost:5080/health",
+          "status": 200,
+          "headers": {
+            "transfer-encoding": "chunked",
+            "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "access-control-allow-credentials": "true",
+            "referrer-policy": "no-referrer",
+            "x-content-type-options": "nosniff",
+            "access-control-allow-origin": "http://localhost:4173",
+            "date": "Tue, 03 Nov 2026 18:26:39 GMT",
+            "content-type": "application/json; charset=utf-8",
+            "server": "Kestrel"
+          }
+        },
+        {
+          "url": "http://localhost:5080/health",
+          "status": 200,
+          "headers": {
+            "transfer-encoding": "chunked",
+            "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+            "access-control-allow-credentials": "true",
+            "referrer-policy": "no-referrer",
+            "x-content-type-options": "nosniff",
+            "access-control-allow-origin": "http://localhost:4173",
+            "date": "Tue, 03 Nov 2026 18:26:39 GMT",
+            "content-type": "application/json; charset=utf-8",
+            "server": "Kestrel"
+          }
+        }
+      ]
+    },
+    {
+      "id": "REG-CORS-01",
+      "origin": "http://localhost:4174",
+      "readable": false,
+      "error": "TypeError",
+      "network": [
+        {
+          "console": "Access to fetch at 'http://localhost:5080/health' from origin 'http://localhost:4174' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        },
+        {
+          "console": "Failed to load resource: net::ERR_FAILED"
+        },
+        {
+          "console": "Failed to load resource: the server responded with a status of 404 (File not found)"
+        },
+        {
+          "console": "Access to fetch at 'http://localhost:5080/health' from origin 'http://localhost:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        },
+        {
+          "console": "Failed to load resource: net::ERR_FAILED"
+        }
+      ]
+    },
+    {
+      "id": "REG-CORS-01",
+      "case": "cookie include Morgan",
+      "origin": "http://localhost:4173",
+      "readable": true,
+      "status": 200
+    },
+    {
+      "id": "REG-CORS-01",
+      "case": "cookie include Morgan",
+      "origin": "http://localhost:4174",
+      "readable": false,
+      "error": "TypeError"
+    },
+    {
+      "id": "REG-CORS-01",
+      "case": "direct HTTP denied origin",
+      "status": 200,
+      "allowOrigin": null
+    }
+  ],
+  "cookieMetadata": [
+    {
+      "name": ".AspNetCore.Identity.Application",
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ]
+}

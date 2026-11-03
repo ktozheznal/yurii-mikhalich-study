@@ -60,7 +60,7 @@ public static class Lab02Endpoints
                 .ToListAsync(ct);
 
             return Results.Ok(rows);
-        }).RequireAuthorization();
+        }).RequireAuthorization().RequireRateLimiting(LoginRateLimit.SearchPolicy);
 
         app.MapPost("/api/incidents", async (CreateIncidentRequest request, HttpContext context, SecureLabDbContext db, CancellationToken ct) =>
         {
@@ -153,7 +153,7 @@ public static class Lab02Endpoints
                     incident.Status.ToString(),
                     incident.OccurredAtUtc,
                     incident.CreatedAtUtc));
-        }).RequireAuthorization();
+        }).RequireAuthorization().RequireCookieAntiforgery();
     }
 
     private static string EscapeLikePattern(string value) => value

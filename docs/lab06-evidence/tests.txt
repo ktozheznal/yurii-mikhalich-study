@@ -1,0 +1,114 @@
+LAB06 FINAL VERIFICATION 2026-11-03
+.NET SDK10.0.303 / Release / isolated PostgreSQL54333
+Working tree: uncommitted, see source-manifest.json.
+
+Build:0warnings,0errors; exit0
+Reset: isolated lab6 DB; exit0
+Command: dotnet test SecureLab.sln -c Release --no-build --no-restore --logger "trx;LogFileName=lab06-final.trx"
+Passed105 / Failed0 / Skipped0; total105; duration2m23s; exit0
+
+Passed | SecureLab.Api.Tests.Lab04AuthorizationTests.A01_Anonymous_Is401WithoutRedirect(method: "DELETE", path: "/api/incidents/20000000-0000-0000-0000-00000000000"···) | 00:00:00.1034749
+Passed | SecureLab.Api.Tests.Lab03RegistrationTests.T02_InvalidRegistration_ReturnsSafe400_AndDoesNotSaveUser(scenario: "long-name") | 00:00:00.1223661
+Passed | SecureLab.Api.Tests.IncidentEndpointTests.GetDetails_ForUnknownId_ReturnsProblemDetails404 | 00:00:00.0092190
+Passed | SecureLab.Api.Tests.Lab03AuthenticationTests.A05_BobCreateWithForgedAliceOwner_PersistsBobFromPrincipal | 00:00:00.2176108
+Passed | SecureLab.Api.Tests.Lab06HardeningTests.REG_CSRF_TokenIsBoundToAuthenticatedIdentity_AndFreshPairWorksAfterNewLogin | 00:00:00.2479313
+Passed | SecureLab.Api.Tests.Lab02SearchTests.T05_UnknownSort_ReturnsSafeValidationProblem(sortBy: "created_at_utc") | 00:00:00.0036693
+Passed | SecureLab.Api.Tests.SearchMechanicsTests.Search_AllowsApostropheInTerm_AndRejectsUnsafeSort | 00:00:00.0838581
+Passed | SecureLab.Api.Tests.Lab06HardeningTests.REG_CSRF_AllCookieMutations_RejectWithoutValidToken_KeepState_ThenAcceptValidPair(operation: "delete", invalidToken: True) | 00:00:00.2199889
+Passed | SecureLab.Api.Tests.Lab02SearchTests.T05_UnknownSort_ReturnsSafeValidationProblem(sortBy: "price") | 00:00:00.0048861
+Passed | SecureLab.Api.Tests.Lab04AuthorizationTests.A01_Anonymous_Is401WithoutRedirect(method: "GET", path: "/api/incidents/search") | 00:00:00.0937413
+Passed | SecureLab.Api.Tests.Lab02SearchTests.Search_TreatsLikeMetacharactersAsLiteralText(character: "%") | 00:00:00.0900411
+Passed | SecureLab.Api.Tests.D7ForwardedForTests.Login_RawXff_DoesNotSplitQuota | 00:00:00.1392408
+Passed | SecureLab.Api.Tests.Lab06HardeningTests.REG_RATE_Search_DefaultQuotaUsesTwoIdentityPartitions_SharedClientsAndRealWindowRecovery | 00:01:01.3091486
+Passed | SecureLab.Api.Tests.Lab04AuthorizationTests.A03R_Analyst_ReadsForAnalysis_WithoutContentOrDeleteRights | 00:00:00.1809500
+Passed | SecureLab.Api.Tests.Lab04AuthorizationTests.A01_Anonymous_Is401WithoutRedirect(method: "GET", path: "/api/incident-comments/30000000-0000-0000-0000-000"···) | 00:00:00.0989037
+Passed | SecureLab.Api.Tests.Lab03RegistrationTests.T01_Register_UsesStandardVerifierAndServerManagedIdAndRole | 00:00:00.2484149
+Passed | SecureLab.Api.Tests.Lab05BrowserPolicyTests.OtherOrigins_GetActualResponseWithoutCorsReadPermission(origin: "https://localhost:4173") | 00:00:00.1013013
+Passed | SecureLab.Api.Tests.AuthenticationMechanicsTests.RealCookie_ReachesSessionCheck | 00:00:00.1814585
+Passed | SecureLab.Api.Tests.Lab03RateLimitAndEventsTests.LoginQuota_IsSharedAcrossClients_RecoversAfterRealWindow_AndFreshHostIsIndependent | 00:01:01.2413158
+Passed | SecureLab.Api.Tests.Lab04AuthorizationTests.A12_ChildChecksParent_AndInternalVisibilityMatchesDetails | 00:00:00.2763209
+Passed | SecureLab.Api.Tests.Lab05BrowserPolicyTests.HtmlDocuments_HaveEnforcedSecurityHeaders(path: "/") | 00:00:00.0969585
+Passed | SecureLab.Api.Tests.Lab05BrowserPolicyTests.OtherOrigins_GetActualResponseWithoutCorsReadPermission(origin: "http://127.0.0.1:4173") | 00:00:00.0946726
+Passed | SecureLab.Api.Tests.Lab06HardeningTests.Headers_PersistOnStaticApiValidationAndMissingResource(environment: "Production") | 00:00:00.1582486
+Passed | SecureLab.Api.Tests.Lab02SearchTests.Search_TreatsLikeMetacharactersAsLiteralText(character: "_") | 00:00:00.2333825
+Passed | SecureLab.Api.Tests.Lab03AuthenticationTests.A07_UnknownUserAndWrongPassword_HaveSameExternalFailure | 00:00:00.1673822
+Passed | SecureLab.Api.Tests.Lab03CookieProfileTests.Login_ActualCookieFlagsMatchEnvironmentAndRequestScheme(environment: "Development", origin: "https://localhost", secure: True) | 00:00:00.1637714
+Passed | SecureLab.Api.Tests.Lab06HardeningTests.REG_CSRF_AllCookieMutations_RejectWithoutValidToken_KeepState_ThenAcceptValidPair(operation: "triage", invalidToken: False) | 00:00:00.1852234
+Passed | SecureLab.Api.Tests.Lab02ContractTests.T02_InvalidDto_ReturnsSafeValidationProblem(scenario: "numeric-severity", field: "severity") | 00:00:00.0063210
+Passed | SecureLab.Api.Tests.Lab04AuthorizationTests.A01_Anonymous_Is401WithoutRedirect(method: "GET", path: "/api/incidents") | 00:00:00.1141406
+Passed | SecureLab.Api.Tests.Lab03RegistrationTests.T02_InvalidRegistration_ReturnsSafe400_AndDoesNotSaveUser(scenario: "long-password") | 00:00:00.1293567
+Passed | SecureLab.Api.Tests.Lab03RegistrationTests.DuplicateRegistration_ReturnsConsistent409_WithoutPartialAccount(scenario: "same-name") | 00:00:00.4293083
+Passed | SecureLab.Api.Tests.Lab02ContractTests.T02_InvalidDto_ReturnsSafeValidationProblem(scenario: "missing-date", field: "occurredAtUtc") | 00:00:00.0054927
+Passed | SecureLab.Api.Tests.IncidentEndpointTests.GetList_ReturnsOwnSeededIncidents_WithoutBob | 00:00:00.0176031
+Passed | SecureLab.Api.Tests.Lab04AuthorizationTests.A04_AllForeignMutationsDeny_EntireStateUnchanged(method: "PUT") | 00:00:00.1547833
+Passed | SecureLab.Api.Tests.Lab03RegistrationTests.T02_InvalidRegistration_ReturnsSafe400_AndDoesNotSaveUser(scenario: "weak-password") | 00:00:00.1496835
+Passed | SecureLab.Api.Tests.Lab06HardeningTests.ProductionUnexpectedError_IsSafeProblemDetailsWithTraceAndHeaders | 00:00:01.1439567
+Passed | SecureLab.Api.Tests.Lab02SearchTests.Search_UsesContractRanksAndIdAsTieBreaker | 00:00:00.0519827
+Passed | SecureLab.Api.Tests.Lab04AuthorizationTests.A09_DeniedAudit_HasSameTraceAsResponse_AndOnlySafeFields | 00:00:00.1548732
+Passed | SecureLab.Api.Tests.Lab03RegistrationTests.T02_InvalidRegistration_ReturnsSafe400_AndDoesNotSaveUser(scenario: "long-email") | 00:00:00.1150336
+Passed | SecureLab.Api.Tests.Lab03RegistrationTests.DuplicateRegistration_ReturnsConsistent409_WithoutPartialAccount(scenario: "same-email") | 00:00:00.2790805
+Passed | SecureLab.Api.Tests.Lab03CookieProfileTests.Login_ActualCookieFlagsMatchEnvironmentAndRequestScheme(environment: "Production", origin: "http://localhost", secure: True) | 00:00:00.1535109
+Passed | SecureLab.Api.Tests.Lab02ContractTests.T06_UnknownIncident_ReturnsSafeProblemDetails | 00:00:00.0239798
+Passed | SecureLab.Api.Tests.Lab04AuthorizationTests.A01_Anonymous_Is401WithoutRedirect(method: "POST", path: "/api/incidents/20000000-0000-0000-0000-00000000000"···) | 00:00:00.0952506
+Passed | SecureLab.Api.Tests.Lab02ContractTests.T01_ValidCreate_NormalizesDateAndIgnoresServerManagedFields | 00:00:00.0301109
+Passed | SecureLab.Api.Tests.Lab05BrowserPolicyTests.AllowedPreflight_DeclaresOnlyGetAndProbeHeader | 00:00:00.0906962
+Passed | SecureLab.Api.Tests.Lab06HardeningTests.REG_CSRF_AllCookieMutations_RejectWithoutValidToken_KeepState_ThenAcceptValidPair(operation: "create", invalidToken: False) | 00:00:00.2081676
+Passed | SecureLab.Api.Tests.Lab04AuthorizationTests.A04_AllForeignMutationsDeny_EntireStateUnchanged(method: "DELETE") | 00:00:00.1668714
+Passed | SecureLab.Api.Tests.Lab04AuthorizationTests.A01_Anonymous_Is401WithoutRedirect(method: "GET", path: "/api/incidents/20000000-0000-0000-0000-00000000000"···) | 00:00:00.0944086
+Passed | SecureLab.Api.Tests.Lab06HardeningTests.ProductionHsts_UsesHttpsNonLoopbackHost_AndPreservesLocalhostExclusion | 00:00:00.0757053
+Passed | SecureLab.Api.Tests.IncidentEndpointTests.ClientScript_DoesNotUseDangerousInnerHtmlSink | 00:00:00.0259696
+Passed | SecureLab.Api.Tests.Lab04AuthorizationTests.A02_Owner_ReadsAndUpdatesOwnContent_AndDeletesOwnNewIncident | 00:00:00.1958766
+Passed | SecureLab.Api.Tests.Lab06HardeningTests.REG_CSRF_AllCookieMutations_RejectWithoutValidToken_KeepState_ThenAcceptValidPair(operation: "logout", invalidToken: True) | 00:00:00.1815005
+Passed | SecureLab.Api.Tests.Lab03SeedTests.Seed_PreservesGuidRolesOwnersAndStandardPasswordVerifier | 00:00:00.2840411
+Passed | SecureLab.Api.Tests.Lab05BrowserPolicyTests.DisallowedPreflight_HasNoCorsPermission | 00:00:00.0931948
+Passed | SecureLab.Api.Tests.Lab04AuthorizationTests.A08a_UpdateIgnoresOwnerRoleStatusAndSeverity_RealIdentityUnchanged | 00:00:00.1749538
+Passed | SecureLab.Api.Tests.Lab04AuthorizationTests.A01_Anonymous_Is401WithoutRedirect(method: "GET", path: "/api/incidents/severity-summary") | 00:00:00.1251363
+Passed | SecureLab.Api.Tests.Lab03AuthenticationTests.A06_Logout_SameCookieClientLosesAccessToMeAndCreate | 00:00:00.1779879
+Passed | SecureLab.Api.Tests.Lab03RegistrationTests.T02_InvalidRegistration_ReturnsSafe400_AndDoesNotSaveUser(scenario: "missing-name") | 00:00:00.1131354
+Passed | SecureLab.Api.Tests.Lab06HardeningTests.REG_CSRF_AllCookieMutations_RejectWithoutValidToken_KeepState_ThenAcceptValidPair(operation: "logout", invalidToken: False) | 00:00:00.1794862
+Passed | SecureLab.Api.Tests.Lab06HardeningTests.REG_CSRF_AllCookieMutations_RejectWithoutValidToken_KeepState_ThenAcceptValidPair(operation: "create", invalidToken: True) | 00:00:00.2071817
+Passed | SecureLab.Api.Tests.Lab04AuthorizationTests.Lab4def | 00:00:00.2569684
+Passed | SecureLab.Api.Tests.Lab03RegistrationTests.T02_InvalidRegistration_ReturnsSafe400_AndDoesNotSaveUser(scenario: "long-display-name") | 00:00:00.1399087
+Passed | SecureLab.Api.Tests.Lab02SearchTests.S02_ControlInput_DoesNotExpandResults | 00:00:00.0199605
+Passed | SecureLab.Api.Tests.Lab04AuthorizationTests.A01_Anonymous_Is401WithoutRedirect(method: "PUT", path: "/api/incidents/20000000-0000-0000-0000-00000000000"···) | 00:00:00.1076288
+Passed | SecureLab.Api.Tests.Lab05BrowserPolicyTests.AllowedAuthenticatedProtectedRequest_KeepsIdentityAndAuthorization | 00:00:00.1685348
+Passed | SecureLab.Api.Tests.Lab05BrowserPolicyTests.OtherOrigins_GetActualResponseWithoutCorsReadPermission(origin: "http://localhost:4174") | 00:00:00.0939543
+Passed | SecureLab.Api.Tests.Lab06HardeningTests.REG_CSRF_AllCookieMutations_RejectWithoutValidToken_KeepState_ThenAcceptValidPair(operation: "delete", invalidToken: False) | 00:00:00.1868331
+Passed | SecureLab.Api.Tests.Lab05BrowserPolicyTests.AllowedAnonymousProtectedRequest_IsReadable401WithoutRedirect | 00:00:00.0987579
+Passed | SecureLab.Api.Tests.Lab02SearchTests.T04_OrdinaryAndApostropheTerms_FindSeedRecords | 00:00:00.0195177
+Passed | SecureLab.Api.Tests.Lab03AuthenticationTests.A02_LoginThenMe_ReturnsOnlyVerifiedSafeFields | 00:00:00.1704199
+Passed | SecureLab.Api.Tests.Lab05BrowserPolicyTests.HtmlDocuments_HaveEnforcedSecurityHeaders(path: "/auth-lab.html") | 00:00:00.0984481
+Passed | SecureLab.Api.Tests.Lab03AuthenticationTests.A01_AnonymousMeAndCreate_Return401WithoutRedirect_EvenWithForgedHeader | 00:00:00.1289738
+Passed | SecureLab.Api.Tests.Lab06HardeningTests.AntiforgeryCookieAndCachePolicy_MatchActualProfile(environment: "Production", origin: "https://localhost", secure: True) | 00:00:00.1235678
+Passed | SecureLab.Api.Tests.Lab06HardeningTests.REG_CSRF_AllCookieMutations_RejectWithoutValidToken_KeepState_ThenAcceptValidPair(operation: "update", invalidToken: True) | 00:00:00.1911636
+Passed | SecureLab.Api.Tests.Lab03CookieProfileTests.Login_ActualCookieFlagsMatchEnvironmentAndRequestScheme(environment: "Production", origin: "https://localhost", secure: True) | 00:00:00.1173704
+Passed | SecureLab.Api.Tests.Lab02ContractTests.T02_InvalidDto_ReturnsSafeValidationProblem(scenario: "empty-title", field: "title") | 00:00:00.0056307
+Passed | SecureLab.Api.Tests.Lab04AuthorizationTests.A05_ListAndExistingReadPaths_AreScopedInDatabase | 00:00:00.2205746
+Passed | SecureLab.Api.Tests.IncidentEndpointTests.GetDetails_DoesNotExposeInternalOwnerFields | 00:00:00.0668750
+Passed | SecureLab.Api.Tests.Lab02ContractTests.T02_InvalidDto_ReturnsSafeValidationProblem(scenario: "long-title-before-trim", field: "title") | 00:00:00.0059721
+Passed | SecureLab.Api.Tests.Lab02ContractTests.T02_InvalidDto_ReturnsSafeValidationProblem(scenario: "future-date", field: "occurredAtUtc") | 00:00:00.0052276
+Passed | SecureLab.Api.Tests.SearchMechanicsTests.Search_ReturnsJson | 00:00:02.2725423
+Passed | SecureLab.Api.Tests.Lab06HardeningTests.REG_CSRF_AllCookieMutations_RejectWithoutValidToken_KeepState_ThenAcceptValidPair(operation: "update", invalidToken: False) | 00:00:00.1883453
+Passed | SecureLab.Api.Tests.Lab05BrowserPolicyTests.HtmlDocuments_HaveEnforcedSecurityHeaders(path: "/browser-lab.html") | 00:00:00.1118238
+Passed | SecureLab.Api.Tests.Lab05BrowserPolicyTests.Production_DoesNotEnableLocalProbeCorsPolicy | 00:00:00.0730185
+Passed | SecureLab.Api.Tests.Lab04AuthorizationTests.A03_NonOwner_DetailsDeny_DoesNotDiscloseBob | 00:00:00.1518397
+Passed | SecureLab.Api.Tests.Lab02SearchTests.Search_TreatsLikeMetacharactersAsLiteralText(character: "\\") | 00:00:00.0829175
+Passed | SecureLab.Api.Tests.Lab06HardeningTests.REG_CSRF_AllCookieMutations_RejectWithoutValidToken_KeepState_ThenAcceptValidPair(operation: "triage", invalidToken: True) | 00:00:00.2102867
+Passed | SecureLab.Api.Tests.Lab03CookieProfileTests.Login_ActualCookieFlagsMatchEnvironmentAndRequestScheme(environment: "Development", origin: "http://localhost", secure: False) | 00:00:00.1918407
+Passed | SecureLab.Api.Tests.Lab03AuthenticationTests.A04_BobCreateWithoutOwner_PersistsBobFromPrincipal | 00:00:00.1805306
+Passed | SecureLab.Api.Tests.Lab03RegistrationTests.T02_InvalidRegistration_ReturnsSafe400_AndDoesNotSaveUser(scenario: "missing-password") | 00:00:00.1157916
+Passed | SecureLab.Api.Tests.Lab03AuthenticationTests.A03_ValidAliceCookie_WithBobDemoHeader_DoesNotChangeMe | 00:00:00.1769750
+Passed | SecureLab.Api.Tests.Lab06HardeningTests.Headers_PersistOnStaticApiValidationAndMissingResource(environment: "Development") | 00:00:00.2026245
+Passed | SecureLab.Api.Tests.Lab04AuthorizationTests.AdministratorHasNoImplicitIncidentBypass_AndOwnerDeleteIsNewOnly | 00:00:00.2273647
+Passed | SecureLab.Api.Tests.Lab02ContractTests.T09_HighDescription_Rejects39AndAccepts40AfterTrim | 00:00:00.0229865
+Passed | SecureLab.Api.Tests.Lab06HardeningTests.AntiforgeryCookieAndCachePolicy_MatchActualProfile(environment: "Development", origin: "http://localhost", secure: False) | 00:00:00.1749662
+Passed | SecureLab.Api.Tests.Lab05BrowserPolicyTests.OtherOrigins_GetActualResponseWithoutCorsReadPermission(origin: "null") | 00:00:00.1126214
+Passed | SecureLab.Api.Tests.Lab03RegistrationTests.T02_InvalidRegistration_ReturnsSafe400_AndDoesNotSaveUser(scenario: "bad-email") | 00:00:00.1144033
+Passed | SecureLab.Api.Tests.Lab04AuthorizationTests.A06_ReporterCannotTriage_EvenWithForgedRoleAndState | 00:00:00.1912486
+Passed | SecureLab.Api.Tests.Lab02ContractTests.T02_InvalidDto_ReturnsSafeValidationProblem(scenario: "long-description-before-trim", field: "description") | 00:00:00.0710869
+Passed | SecureLab.Api.Tests.Lab06HardeningTests.StatusAudit_RecordsAllowedAnalystAndDeniedReporter_WithoutBodyOrCredentials | 00:00:00.3018966
+Passed | SecureLab.Api.Tests.Lab04AuthorizationTests.A07_AnalystOnlyNewToTriaged_ServerSelectsNextStatus | 00:00:00.2636961
+Passed | SecureLab.Api.Tests.Lab02ContractTests.T03_DuplicateActiveTitleConflicts_ButClosedAndDifferentCaseDoNot | 00:00:00.0463787
+Passed | SecureLab.Api.Tests.Lab06HardeningTests.AntiforgeryCookieAndCachePolicy_MatchActualProfile(environment: "Development", origin: "https://localhost", secure: True) | 00:00:00.1737902
+Passed | SecureLab.Api.Tests.Lab03RateLimitAndEventsTests.AuthenticationEvents_RecordSuccessFailureLogoutAndLimit_WithoutCredentials | 00:00:00.2440826
+Passed | SecureLab.Api.Tests.Lab05BrowserPolicyTests.AllowedSimpleRequest_DeclaresExactOriginAndCredentials | 00:00:00.0953129

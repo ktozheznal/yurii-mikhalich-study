@@ -49,7 +49,7 @@ public static class Lab03Identity
             AuthenticationEvents.Write(logger, context, "logout", "success",
                 context.User.FindFirstValue(ClaimTypes.NameIdentifier));
             return Results.NoContent();
-        }).RequireAuthorization();
+        }).RequireAuthorization().RequireCookieAntiforgery();
 
         app.MapGet("/api/me", (HttpContext context) =>
         {

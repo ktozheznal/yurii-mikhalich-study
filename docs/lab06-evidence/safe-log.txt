@@ -1,0 +1,25 @@
+LOG/AUDIT REVIEW 2026-11-03
+Six scenarios exercised; password/token/cookie/body sentinels absent.
+
+{"scenario":"successful login","status":204}
+{"scenario":"failed login","status":401}
+{"scenario":"denied protected action","status":403,"resourceId":"ced24cc3-9f54-47bc-8749-079acae60ff4","stateUnchanged":true}
+{"scenario":"validation error","status":400,"bodyNotLogged":true}
+{"scenario":"privileged transition","status":200,"oldStatus":"New","newStatus":"Triaged","resourceId":"ced24cc3-9f54-47bc-8749-079acae60ff4"}
+{"scenario":"unexpected server error","status":500,"traceId":"00-9c21f4f52eafb87b6a94348f8a689907-ef189c8136cfd0f3-00","logTraceId":"9c21f4f52eafb87b6a94348f8a689907","traceMatches":true,"endpoint":"http://localhost:5090"}
+
+Sanitized authentication and audit events:
+      Authentication logout at 11/03/2026 18:26:39 +00:00: result success, user 10000000-0000-0000-0000-000000000001, trace 0HNPPQV85D3FD:0000000A
+      Authentication login at 11/03/2026 18:26:40 +00:00: result success, user 10000000-0000-0000-0000-000000000003, trace 0HNPPQV85D3F8:0000000E
+      Authentication login at 11/03/2026 18:28:58 +00:00: result success, user 10000000-0000-0000-0000-000000000001, trace 0HNPPQV85D3FK:00000001
+      Authentication login at 11/03/2026 18:28:58 +00:00: result success, user 10000000-0000-0000-0000-000000000003, trace 0HNPPQV85D3FK:00000002
+      Authentication login at 11/03/2026 18:28:58 +00:00: result failure, user unverified, trace 0HNPPQV85D3FK:00000003
+      authorization.denied subject=10000000-0000-0000-0000-000000000001 action=triage resource=ced24cc3-9f54-47bc-8749-079acae60ff4 result=deny utc=2026-11-03T18:28:58.6303614+00:00 traceId=00-f891fe5d4f291dc0a93cfbfd0702c322-5445d494c0ac1672-00
+      incident.status.changed subject=10000000-0000-0000-0000-000000000003 action=triage resource=ced24cc3-9f54-47bc-8749-079acae60ff4 old=New new=Triaged result=allow utc=2026-11-03T18:28:58.6434617+00:00 traceId=00-d9b981c2d007fda1c87409797fa76aaf-a95a869cc24fd9e2-00
+
+Production scoped diagnostic localhost:5090 (no TLS claim):
+fail: Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware[1]
+      => SpanId:ef189c8136cfd0f3, TraceId:9c21f4f52eafb87b6a94348f8a689907, ParentId:0000000000000000 => ConnectionId:0HNPPR10OVJIP => RequestPath:/api/auth/login RequestId:0HNPPR10OVJIP:00000001
+      An unhandled exception has occurred while executing the request.
+Response traceId: 00-9c21f4f52eafb87b6a94348f8a689907-ef189c8136cfd0f3-00
+Matched TraceId: 9c21f4f52eafb87b6a94348f8a689907
