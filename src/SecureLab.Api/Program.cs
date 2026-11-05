@@ -40,7 +40,7 @@ const string browserLabCors = "BrowserLabProbe";
 if (builder.Environment.IsDevelopment())
 {
     builder.Services.AddCors(options => options.AddPolicy(browserLabCors, policy => policy
-        .WithOrigins("http://localhost:4173")
+        .WithOrigins()
         .WithMethods("GET")
         .WithHeaders("X-Lab-Cors-Probe")
         .AllowCredentials()));
